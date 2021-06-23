@@ -33,6 +33,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `kubectx` | `v0.9.3` | `:kubectx-v0.9.3` | all |
 | `kubens` | `v0.9.3` | `:kubens` | all |
 | `kubens` | `v0.9.3` | `:kubens-v0.9.3` | all |
+| `stern` | `v1.18.0` | `:stern` | all |
+| `stern` | `v1.18.0` | `:stern-v1.18.0` | all |
 
 ℹ️ `all` architectures means: linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x,linux/riscv64
 
