@@ -28,6 +28,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 | Program | Version | Image tag | Architectures |
 | --- | --- | --- | --- |
+| `buildx` | `v0.5.1` | `:buildx` | all but `linux/riscv64` |
+| `buildx` | `v0.5.1` | `:buildx-v0.5.1` | all but `linux/riscv64` |
 | `compose` | `v2.0.0-beta.4` | `:compose` | all |
 | `compose` | `v2.0.0-beta.4` | `:compose-v2.0.0-beta.4` | all |
 | `dlv` | `v1.6.1` | `:dlv` | `linux/amd64` and `linux/arm64` |
