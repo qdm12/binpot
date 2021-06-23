@@ -3,10 +3,12 @@ on:
   push:
     paths:
       - .github/workflows/kubens.yml
+      - unavailable/*
       - dockerfiles/kubens/*
   pull_request:
     paths:
       - .github/workflows/kubens.yml
+      - unavailable/*
       - dockerfiles/kubens/*
 
 jobs:

@@ -3,10 +3,12 @@ on:
   push:
     paths:
       - .github/workflows/kubectx.yml
+      - unavailable/*
       - dockerfiles/kubectx/*
   pull_request:
     paths:
       - .github/workflows/kubectx.yml
+      - unavailable/*
       - dockerfiles/kubectx/*
 
 jobs:
