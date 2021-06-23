@@ -16,10 +16,16 @@ ARG VERSION=v1.41.1
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/golangci/golangci-lint.git .
 RUN go mod download
 ARG TARGETPLATFORM
-RUN COMMIT="$(git rev-parse --short HEAD)" && \
+RUN export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
+    export GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" && \
+    if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then \
+       wget -qO- https://raw.githubusercontent.com/qdm12/binpot/main/unavailable/build.sh | \
+       sh -s -- "golangci-lint ${VERSION}" "${TARGETPLATFORM}" && \
+       exit 0; \
+    fi && \
+    echo "Building for ${TARGETPLATFORM}..." && \
+    COMMIT="$(git rev-parse --short HEAD)" && \
     DATE="$(date +%Y-%m-%dT%T%z)" && \
-    GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
-    GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
     -X 'main.version=${VERSION}' \
     -X 'main.commit=${COMMIT}' \

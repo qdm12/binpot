@@ -16,10 +16,15 @@ ARG VERSION=v3.6.1
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/helm/helm.git .
 RUN go mod download
 ARG TARGETPLATFORM
-RUN echo "Building for ${TARGETPLATFORM}..." && \
+RUN export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
+    export GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" && \
+    if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then \
+       wget -qO- https://raw.githubusercontent.com/qdm12/binpot/main/unavailable/build.sh | \
+       sh -s -- "helm ${VERSION}" "${TARGETPLATFORM}" && \
+       exit 0; \
+    fi && \
+    echo "Building for ${TARGETPLATFORM}..." && \
     GITCOMMIT="$(git rev-parse HEAD)" && \
-    GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
-    GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
     -X 'helm.sh/helm/v3/internal/version.version=${VERSION}' \
     -X 'helm.sh/helm/v3/internal/version.gitCommit=${GITCOMMIT}' \
