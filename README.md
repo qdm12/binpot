@@ -28,6 +28,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 | Program | Version | Image tag | Architectures |
 | --- | --- | --- | --- |
+| `compose` | `v2.0.0-beta.4` | `:compose` | all |
+| `compose` | `v2.0.0-beta.4` | `:compose-v2.0.0-beta.4` | all |
 | `dlv` | `v1.6.1` | `:dlv` | `linux/amd64` and `linux/arm64` |
 | `dlv` | `v1.6.1` | `:dlv-v1.6.1` | `linux/amd64` and `linux/arm64` |
 | `docker` | `v20.10.7` | `:docker` | all |
