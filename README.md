@@ -27,5 +27,9 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 | Program | Version | Image tag | Architectures |
 | --- | --- | --- | --- |
+| `helm` | `v3.6.1` | `:helm` | all but `linux/riscv64` |
+| `helm` | `v3.6.1` | `:helm-v3.6.1` | all but `linux/riscv64` |
+
+ℹ️ `all` architectures means: linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x,linux/riscv64
 
 **Want more!?** ▶️ [Create an issue!](https://github.com/qdm12/binpot/issues)
