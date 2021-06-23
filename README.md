@@ -28,6 +28,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 | Program | Version | Image tag | Architectures |
 | --- | --- | --- | --- |
+| `dlv` | `v1.6.1` | `:dlv` | `linux/amd64` and `linux/arm64` |
+| `dlv` | `v1.6.1` | `:dlv-v1.6.1` | `linux/amd64` and `linux/arm64` |
 | `golangci-lint` | `v1.41.1` | `:golangci-lint` | all but `linux/riscv64` |
 | `golangci-lint` | `v1.41.1` | `:golangci-lint-v1.41.1` | all but `linux/riscv64` |
 | `gopls` | `v0.7.0` | `:gopls` | all |
