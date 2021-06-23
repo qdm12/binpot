@@ -19,3 +19,4 @@ go build -trimpath \
   -X 'main.name=${1}' \
   -X 'main.platform=${2}'" \
   -o /tmp/bin main.go
+chmod 500 /tmp/bin
