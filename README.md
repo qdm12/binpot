@@ -27,6 +27,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 | Program | Version | Image tag | Architectures |
 | --- | --- | --- | --- |
+| `golangci-lint` | `v1.41.1` | `:golangci-lint` | all but `linux/riscv64` |
+| `golangci-lint` | `v1.41.1` | `:golangci-lint-v1.41.1` | all but `linux/riscv64` |
 | `helm` | `v3.6.1` | `:helm` | all but `linux/riscv64` |
 | `helm` | `v3.6.1` | `:helm-v3.6.1` | all but `linux/riscv64` |
 | `kubectl` | `v1.21.1` | `:kubectl` | all |
@@ -41,3 +43,10 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 ℹ️ `all` architectures means: linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x,linux/riscv64
 
 **Want more!?** ▶️ [Create an issue!](https://github.com/qdm12/binpot/issues)
+
+## How it works
+
+1. For each program, a Dockerfile describes how to build it. The final binary is placed on a final [scratch](https://hub.docker.com/_/scratch) based Docker image. *Example:* `helm` has [`./dockerfiles/helm/Dockerfile`](dockerfiles/helm/Dockerfile)
+2. For each program, a Github Action workflow is triggered when its Dockerfile or the workflow itself is changed. This workflow takes care of:
+    1. Cross build the program for many CPU architectures
+    2. Pushing the images containing the program to Docker Hub
