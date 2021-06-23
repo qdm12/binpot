@@ -26,6 +26,7 @@ RUN echo "Building for ${TARGETPLATFORM}..." && \
     chmod 500 /tmp/bin
 
 FROM scratch
+ENTRYPOINT [ "/bin" ]
 ARG VERSION
 ARG CREATED
 ARG REVISION

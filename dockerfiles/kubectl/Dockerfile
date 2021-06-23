@@ -39,6 +39,7 @@ RUN SOURCE_DATE_EPOCH="$(git show -s --format=format:%ct HEAD)" && \
     chmod 500 /tmp/bin
 
 FROM scratch
+ENTRYPOINT [ "/bin" ]
 ARG VERSION
 ARG CREATED
 ARG REVISION

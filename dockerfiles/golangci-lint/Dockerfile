@@ -28,6 +28,7 @@ RUN COMMIT="$(git rev-parse --short HEAD)" && \
     chmod 500 /tmp/bin
 
 FROM scratch
+ENTRYPOINT [ "/bin" ]
 ARG VERSION
 ARG CREATED
 ARG REVISION

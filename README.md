@@ -20,6 +20,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 - Each Docker image and binary program is built for each of the possible CPU architecture supported by Docker, unless indicated otherwise.
 - Each binary has permissions `500` (read and execute for the user owner)
 - You can change the ownership in the `COPY` command using `--chown=1000` for example, without duplicating the binary in your Docker image layers.
+- Each Docker image has an entrypoint `[ "/bin" ]` so you can run it as well
 
 **Need help?** ▶️ [Create a discussion](https://github.com/qdm12/binpot/discussions)
 

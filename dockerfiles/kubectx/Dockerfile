@@ -24,6 +24,7 @@ RUN GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFO
     chmod 500 /tmp/bin
 
 FROM scratch
+ENTRYPOINT [ "/bin" ]
 ARG VERSION
 ARG CREATED
 ARG REVISION
