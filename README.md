@@ -29,6 +29,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | --- | --- | --- | --- |
 | `helm` | `v3.6.1` | `:helm` | all but `linux/riscv64` |
 | `helm` | `v3.6.1` | `:helm-v3.6.1` | all but `linux/riscv64` |
+| `kubectl` | `v1.21.1` | `:kubectl` | all |
+| `kubectl` | `v1.21.1` | `:kubectl-v1.21.1` | all |
 | `kubectx` | `v0.9.3` | `:kubectx` | all |
 | `kubectx` | `v0.9.3` | `:kubectx-v0.9.3` | all |
 | `kubens` | `v0.9.3` | `:kubens` | all |
