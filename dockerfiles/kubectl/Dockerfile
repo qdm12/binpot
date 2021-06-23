@@ -26,13 +26,13 @@ RUN SOURCE_DATE_EPOCH="$(git show -s --format=format:%ct HEAD)" && \
     -X 'k8s.io/client-go/pkg/version.buildDate=${BUILD_DATE}' \
     -X 'k8s.io/client-go/pkg/version.gitCommit=${GITCOMMIT}' \
     -X 'k8s.io/client-go/pkg/version.gitTreeState=clean' \
-    -X 'k8s.io/client-go/pkg/version.gitVersion=${KUBERNETES_VERSION}' \
+    -X 'k8s.io/client-go/pkg/version.gitVersion=${VERSION}' \
     -X 'k8s.io/client-go/pkg/version.gitMajor=1' \
     -X 'k8s.io/client-go/pkg/version.gitMinor=29' \
     -X 'k8s.io/component-base/version.buildDate=${BUILD_DATE}' \
     -X 'k8s.io/component-base/version.gitCommit=${GITCOMMIT}' \
     -X 'k8s.io/component-base/version.gitTreeState=clean' \
-    -X 'k8s.io/component-base/version.gitVersion=${KUBERNETES_VERSION}' \
+    -X 'k8s.io/component-base/version.gitVersion=${VERSION}' \
     -X 'k8s.io/component-base/version.gitMajor=1' \
     -X 'k8s.io/component-base/version.gitMinor=21' \
     " -o /tmp/bin cmd/kubectl/kubectl.go && \

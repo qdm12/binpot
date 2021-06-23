@@ -21,7 +21,7 @@ RUN COMMIT="$(git rev-parse --short HEAD)" && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
-    -X 'main.version==${VERSION}' \
+    -X 'main.version=${VERSION}' \
     -X 'main.commit=${COMMIT}' \
     -X 'main.date=${DATE}' \
     " -o /tmp/bin ./cmd/golangci-lint && \
