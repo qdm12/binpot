@@ -20,10 +20,7 @@ ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
     export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
     export GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" && \
-    if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then \
-        go mod edit -replace=github.com/prometheus/procfs=github.com/prometheus/procfs@v0.6.0 && \
-        go mod tidy; \
-    fi && \
+    if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then go get github.com/prometheus/procfs@v0.6.0 && go mod tidy; fi && \
     go build -trimpath -ldflags="-s -w \
     -X 'github.com/docker/buildx/version.Version=${VERSION}' \
     -X 'github.com/docker/buildx/version.Revision=$(git rev-parse HEAD)' \

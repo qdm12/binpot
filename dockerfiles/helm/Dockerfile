@@ -17,10 +17,7 @@ RUN git clone --depth 1 --branch ${VERSION} https://github.com/helm/helm.git .
 RUN go mod download
 ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
-    if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then \
-        go mod edit -replace=github.com/prometheus/procfs=github.com/prometheus/procfs@v0.6.0 && \
-        go mod tidy; \
-    fi && \
+    if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then go get github.com/prometheus/procfs@v0.6.0 && go mod tidy; fi && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
