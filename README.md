@@ -52,6 +52,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `kubectx` | `v0.9.3` | `:kubectx-v0.9.3` | all |
 | `kubens` | `v0.9.3` | `:kubens` | all |
 | `kubens` | `v0.9.3` | `:kubens-v0.9.3` | all |
+| `logo-ls` | `v1.6.1` | `:logo-ls` | all |
+| `logo-ls` | `v1.6.1` | `:logo-ls-v1.3.7` | all |
 | `stern` | `v1.18.0` | `:stern` | all |
 | `stern` | `v1.18.0` | `:stern-v1.18.0` | all |
 
