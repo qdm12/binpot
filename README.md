@@ -84,5 +84,12 @@ This is often the case for VSCode development containers for instance. In this c
 
 1. For each program, a Dockerfile describes how to build it. The final binary is placed on a final [scratch](https://hub.docker.com/_/scratch) based Docker image. *Example:* `helm` has [`./dockerfiles/helm/Dockerfile`](dockerfiles/helm/Dockerfile)
 2. For each program, a Github Action workflow is triggered when its Dockerfile or the workflow itself is changed. This workflow takes care of:
-    1. Cross build the program for many CPU architectures
+    1. Cross build the program for all CPU architectures
+        - If one architecture is not supported such as for `dlv`, build the [unavailable](unavailable) program
     2. Pushing the images containing the program to Docker Hub
+
+## TODOs
+
+- Change Dockerfile if block when Buildx supports RISCV64 officially: [Github issue](https://github.com/docker/buildx/issues/643)
+- Change Dockerfile if block when Golangci-lint supports RISV64 officially: [Github issue](https://github.com/golangci/golangci-lint/issues/2079)
+- Change Dockerfile if block when Helm supports RISV64 officially: [Github issue](https://github.com/helm/helm/issues/9858)
