@@ -21,8 +21,8 @@ RUN echo "Building for ${TARGETPLATFORM}..." && \
         go mod edit -replace=github.com/prometheus/procfs=github.com/prometheus/procfs@v0.6.0 && \
         go mod tidy; \
     fi && \
-    GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})"
-    GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})"
+    GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
+    GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
     -X 'main.version=${VERSION}' \
     -X 'main.commit=$(git rev-parse --short HEAD)' \
