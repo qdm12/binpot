@@ -73,11 +73,6 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 ℹ️ `all` architectures means: linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x,linux/riscv64
 
-💁 Note that all images are built for all architectures even if the program does not support it.
-That means that, for example for `helm`, a substitute Go program printing `helm v3.6.1 is unavailable on linux/riscv64` and exiting with exit code `1` is used for unsupported platforms.
-This is like so so you can still cross build with all the architectures, especially if the program is an optional dependency.
-This is often the case for VSCode development containers for instance. In this case, if you try to build for `riscv64` and require `helm` as an optional dependency, your `COPY --from=qmcgaw/binpot:helm` will not fail.
-
 **Want more!?** ▶️ [Create an issue!](https://github.com/qdm12/binpot/issues)
 
 ## How it works
@@ -87,6 +82,13 @@ This is often the case for VSCode development containers for instance. In this c
     1. Cross build the program for all CPU architectures
         - If one architecture is not supported such as for `dlv`, build the [unavailable](unavailable) program
     2. Pushing the images containing the program to Docker Hub
+
+## Note on `dlv`
+
+💁 Concerning `dlv`: all images are built for all architectures even if the program does not support all of them.
+A substitute Go program printing `dlv v1.6.1 is unavailable on <platform name>` and exiting with exit code `1` is used for unsupported platforms.
+This is like so so you can still cross build with all the architectures, especially if the program is an optional dependency.
+This is often the case for VSCode development containers for instance. In this case, if you try to build for `arm/v7` and need `dlv` as an optional dependency, your `COPY --from=qmcgaw/binpot:dlv` will not fail.
 
 ## TODOs
 
