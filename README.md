@@ -56,6 +56,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `kubens` | `v0.9.3` | `:kubens-v0.9.3` | all |
 | `logo-ls` | `v1.6.1` | `:logo-ls` | all |
 | `logo-ls` | `v1.6.1` | `:logo-ls-v1.3.7` | all |
+| `mockery` | `v2.9.0` | `:mockery` | all |
+| `mockery` | `v2.9.0` | `:mockery-v2.9.0` | all |
 | `mockgen` | `v1.6.0` | `:mockgen` | all |
 | `mockgen` | `v1.6.0` | `:mockgen-v1.6.0` | all |
 | `stern` | `v1.18.0` | `:stern` | all |
