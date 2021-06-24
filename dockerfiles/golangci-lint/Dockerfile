@@ -19,9 +19,8 @@ ARG TARGETPLATFORM
 RUN export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
     export GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" && \
     if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then \
-       wget -qO- https://raw.githubusercontent.com/qdm12/binpot/main/unavailable/build.sh | \
-       sh -s -- "golangci-lint ${VERSION}" "${TARGETPLATFORM}" && \
-       exit 0; \
+        go mod edit -replace=github.com/prometheus/procfs=github.com/prometheus/procfs@v0.6.0 && \
+        go mod tidy; \
     fi && \
     echo "Building for ${TARGETPLATFORM}..." && \
     COMMIT="$(git rev-parse --short HEAD)" && \

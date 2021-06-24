@@ -30,8 +30,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | --- | --- | --- | --- |
 | `bit` | `v1.1.1` | `:bit` | all |
 | `bit` | `v1.1.1` | `:bit-v1.1.1` | all |
-| `buildx` | `v0.5.1` | `:buildx` | all but `linux/riscv64` |
-| `buildx` | `v0.5.1` | `:buildx-v0.5.1` | all but `linux/riscv64` |
+| `buildx` | `v0.5.1` | `:buildx` | all |
+| `buildx` | `v0.5.1` | `:buildx-v0.5.1` | all |
 | `compose` | `v2.0.0-beta.4` | `:compose` | all |
 | `compose` | `v2.0.0-beta.4` | `:compose-v2.0.0-beta.4` | all |
 | `dlv` | `v1.6.1` | `:dlv` | `linux/amd64` and `linux/arm64` |
@@ -40,8 +40,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `docker` | `v20.10.7` | `:docker-v20.10.7` | all |
 | `gh` | `v1.11.0` | `:gh` | all |
 | `gh` | `v1.11.0` | `:gh-v1.11.0` | all |
-| `golangci-lint` | `v1.41.1` | `:golangci-lint` | all but `linux/riscv64` |
-| `golangci-lint` | `v1.41.1` | `:golangci-lint-v1.41.1` | all but `linux/riscv64` |
+| `golangci-lint` | `v1.41.1` | `:golangci-lint` | all |
+| `golangci-lint` | `v1.41.1` | `:golangci-lint-v1.41.1` | all |
 | `gomock` | `v1.6.0` | `:gomock` | all |
 | `gomock` | `v1.6.0` | `:gomock-v1.6.0` | all |
 | `gomodifytags` | `v1.13.0` | `:gomodifytags` | all |
@@ -54,8 +54,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `gopls` | `v0.7.0` | `:gopls-v0.7.0` | all |
 | `gotests` | `v1.6.0` | `:gotests` | all |
 | `gotests` | `v1.6.0` | `:gotests-v1.6.0` | all |
-| `helm` | `v3.6.1` | `:helm` | all but `linux/riscv64` |
-| `helm` | `v3.6.1` | `:helm-v3.6.1` | all but `linux/riscv64` |
+| `helm` | `v3.6.1` | `:helm` | all |
+| `helm` | `v3.6.1` | `:helm-v3.6.1` | all |
 | `kubectl` | `v1.21.1` | `:kubectl` | all |
 | `kubectl` | `v1.21.1` | `:kubectl-v1.21.1` | all |
 | `kubectx` | `v0.9.3` | `:kubectx` | all |
