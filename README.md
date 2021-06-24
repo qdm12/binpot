@@ -48,6 +48,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `gomodifytags` | `v1.13.0` | `:gomodifytags-v1.13.0` | all |
 | `go-outline` | `9736a4b` | `:go-outline` | all |
 | `go-outline` | `9736a4b` | `:go-outline-9736a4b` | all |
+| `gopkgs` | `v2.1.2` | `:gopkgs` | all |
+| `gopkgs` | `v2.1.2` | `:gopkgs-v2.1.2` | all |
 | `goplay` | `v1.0.0` | `:goplay` | all |
 | `goplay` | `v1.0.0` | `:goplay-v1.0.0` | all |
 | `gopls` | `v0.7.0` | `:gopls` | all |
