@@ -23,7 +23,7 @@ The script requires:
 - `wget`
 - `go`
 - Argument 1 as the program name
-- Argument 2 as the target platform (`${TARGETPLATFORM}` in a Dockerfile)
+- `${TARGETPLATFORM}` to be set
 
 It will:
 

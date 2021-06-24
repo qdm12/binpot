@@ -17,11 +17,9 @@ RUN git clone --depth 1 --branch ${VERSION} https://github.com/go-delve/delve.gi
 RUN go mod download
 ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
-    export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
-    export GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" && \
     if [ "${TARGETPLATFORM}" = "linux/amd64" ] || [ "${TARGETPLATFORM}" = "linux/arm64" ]; then \
-        COMMIT="$(git rev-parse --short HEAD)" && \
-        DATE="$(date +%Y-%m-%dT%T%z)" && \
+        GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
+        GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
         go build -trimpath -ldflags="-s -w" -o /tmp/bin ./cmd/dlv && \
         chmod 500 /tmp/bin && \
         exit 0; \

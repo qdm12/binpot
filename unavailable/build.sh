@@ -3,17 +3,19 @@
 # Requirements
 # - programs: wget, xcputranslate, go
 # - argument $1: program name
-# - argument $2: target platform
+# - environment variable ${TARGETPLATFORM}
 
 # Output
 # - Clear current directory
 # - Binary program to /tmp/bin
 
-echo "Marking ${2} as unavailable"
+echo "Marking ${TARGETPLATFORM} as unavailable"
 echo "Clearing the current directory..."
 rm -rf *
 echo "Building unavailable program..."
 wget -q https://raw.githubusercontent.com/qdm12/binpot/main/unavailable/main.go
+GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
+GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
 go build -trimpath \
   -ldflags="-s -w \
   -X 'main.name=${1}' \
