@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/kubens.yml
-      - dockerfiles/kubens/*
+      - "dockerfiles/kubens/**"
   pull_request:
     paths:
       - .github/workflows/kubens.yml
-      - dockerfiles/kubens/*
+      - "dockerfiles/kubens/**"
 
 jobs:
   verify:

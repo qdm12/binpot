@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/compose.yml
-      - dockerfiles/compose/*
+      - 'dockerfiles/compose/*'
   pull_request:
     paths:
       - .github/workflows/compose.yml
-      - dockerfiles/compose/*
+      - 'dockerfiles/compose/*'
 
 jobs:
   verify:

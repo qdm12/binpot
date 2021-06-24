@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/mockery.yml
-      - dockerfiles/mockery/*
+      - "dockerfiles/mockery/**"
   pull_request:
     paths:
       - .github/workflows/mockery.yml
-      - dockerfiles/mockery/*
+      - "dockerfiles/mockery/**"
 
 jobs:
   verify:

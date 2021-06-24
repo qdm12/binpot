@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/mockgen.yml
-      - dockerfiles/mockgen/*
+      - "dockerfiles/mockgen/**"
   pull_request:
     paths:
       - .github/workflows/mockgen.yml
-      - dockerfiles/mockgen/*
+      - "dockerfiles/mockgen/**"
 
 jobs:
   verify:

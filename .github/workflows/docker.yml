@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/docker.yml
-      - dockerfiles/docker/*
+      - "dockerfiles/docker/**"
   pull_request:
     paths:
       - .github/workflows/docker.yml
-      - dockerfiles/docker/*
+      - "dockerfiles/docker/**"
 
 jobs:
   verify:

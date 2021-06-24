@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/gopls.yml
-      - dockerfiles/gopls/*
+      - "dockerfiles/gopls/**"
   pull_request:
     paths:
       - .github/workflows/gopls.yml
-      - dockerfiles/gopls/*
+      - "dockerfiles/gopls/**"
 
 jobs:
   verify:

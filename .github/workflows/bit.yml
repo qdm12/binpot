@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/bit.yml
-      - dockerfiles/bit/*
+      - "dockerfiles/bit/**"
   pull_request:
     paths:
       - .github/workflows/bit.yml
-      - dockerfiles/bit/*
+      - "dockerfiles/bit/**"
 
 jobs:
   verify:

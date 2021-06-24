@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/stern.yml
-      - dockerfiles/stern/*
+      - "dockerfiles/stern/**"
   pull_request:
     paths:
       - .github/workflows/stern.yml
-      - dockerfiles/stern/*
+      - "dockerfiles/stern/**"
 
 jobs:
   verify:

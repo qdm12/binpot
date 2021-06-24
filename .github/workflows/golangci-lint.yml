@@ -3,13 +3,13 @@ on:
   push:
     paths:
       - .github/workflows/golangci-lint.yml
-      - unavailable/*
-      - dockerfiles/golangci-lint/*
+      - "unavailable/**"
+      - "dockerfiles/golangci-lint/**"
   pull_request:
     paths:
       - .github/workflows/golangci-lint.yml
-      - unavailable/*
-      - dockerfiles/golangci-lint/*
+      - "unavailable/**"
+      - "dockerfiles/golangci-lint/**"
 
 jobs:
   verify:

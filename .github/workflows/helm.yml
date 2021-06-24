@@ -3,13 +3,13 @@ on:
   push:
     paths:
       - .github/workflows/helm.yml
-      - unavailable/*
-      - dockerfiles/helm/*
+      - "unavailable/**"
+      - "dockerfiles/helm/**"
   pull_request:
     paths:
       - .github/workflows/helm.yml
-      - unavailable/*
-      - dockerfiles/helm/*
+      - "unavailable/**"
+      - "dockerfiles/helm/**"
 
 jobs:
   verify:

@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/go-outline.yml
-      - dockerfiles/go-outline/*
+      - "dockerfiles/go-outline/**"
   pull_request:
     paths:
       - .github/workflows/go-outline.yml
-      - dockerfiles/go-outline/*
+      - "dockerfiles/go-outline/**"
 
 jobs:
   verify:

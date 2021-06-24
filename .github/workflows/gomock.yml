@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/gomock.yml
-      - dockerfiles/gomock/*
+      - "dockerfiles/gomock/**"
   pull_request:
     paths:
       - .github/workflows/gomock.yml
-      - dockerfiles/gomock/*
+      - "dockerfiles/gomock/**"
 
 jobs:
   verify:

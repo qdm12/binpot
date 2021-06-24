@@ -3,13 +3,13 @@ on:
   push:
     paths:
       - .github/workflows/dlv.yml
-      - unavailable/*
-      - dockerfiles/dlv/*
+      - "unavailable/**"
+      - "dockerfiles/dlv/**"
   pull_request:
     paths:
       - .github/workflows/dlv.yml
-      - unavailable/*
-      - dockerfiles/dlv/*
+      - "unavailable/**"
+      - "dockerfiles/dlv/**"
 
 jobs:
   verify:

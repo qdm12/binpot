@@ -3,11 +3,11 @@ on:
   push:
     paths:
       - .github/workflows/gotests.yml
-      - dockerfiles/gotests/*
+      - "dockerfiles/gotests/**"
   pull_request:
     paths:
       - .github/workflows/gotests.yml
-      - dockerfiles/gotests/*
+      - "dockerfiles/gotests/**"
 
 jobs:
   verify:
