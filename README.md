@@ -46,6 +46,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `gomock` | `v1.6.0` | `:gomock-v1.6.0` | all |
 | `gopls` | `v0.7.0` | `:gopls` | all |
 | `gopls` | `v0.7.0` | `:gopls-v0.7.0` | all |
+| `gotests` | `v1.6.0` | `:gotests` | all |
+| `gotests` | `v1.6.0` | `:gotests-v1.6.0` | all |
 | `helm` | `v3.6.1` | `:helm` | all but `linux/riscv64` |
 | `helm` | `v3.6.1` | `:helm-v3.6.1` | all but `linux/riscv64` |
 | `kubectl` | `v1.21.1` | `:kubectl` | all |
