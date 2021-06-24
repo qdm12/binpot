@@ -46,6 +46,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `gomock` | `v1.6.0` | `:gomock-v1.6.0` | all |
 | `gomodifytags` | `v1.13.0` | `:gomodifytags` | all |
 | `gomodifytags` | `v1.13.0` | `:gomodifytags-v1.13.0` | all |
+| `go-outline` | `9736a4b` | `:go-outline` | all |
+| `go-outline` | `9736a4b` | `:go-outline-9736a4b` | all |
 | `goplay` | `v1.0.0` | `:goplay` | all |
 | `goplay` | `v1.0.0` | `:goplay-v1.0.0` | all |
 | `gopls` | `v0.7.0` | `:gopls` | all |
