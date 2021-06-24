@@ -16,7 +16,8 @@ ARG VERSION=v0.7.0
 RUN git clone --depth 1 --branch "gopls/${VERSION}" https://github.com/golang/tools.git .
 RUN go mod download
 ARG TARGETPLATFORM
-RUN cd gopls && \
+RUN echo "Building for ${TARGETPLATFORM}..." && \
+    cd gopls && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w" -o /tmp/bin golang.org/x/tools/gopls && \
