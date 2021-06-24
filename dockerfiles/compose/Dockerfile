@@ -21,7 +21,7 @@ RUN GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFO
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
     -X 'github.com/docker/compose-cli/internal.Version=${VERSION}' \
-    " -o /tmp/bin && \
+    " -o /tmp/bin ./cmd && \
     chmod 500 /tmp/bin
 
 FROM scratch
