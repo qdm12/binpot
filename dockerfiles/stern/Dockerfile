@@ -17,7 +17,6 @@ RUN git clone --depth 1 --branch ${VERSION} https://github.com/stern/stern.git .
 RUN go mod download
 ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
-    GITCOMMIT="$(git rev-parse HEAD)" && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \

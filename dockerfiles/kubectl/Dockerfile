@@ -16,7 +16,8 @@ ARG VERSION=v1.21.1
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/kubernetes/kubernetes.git .
 RUN go mod download
 ARG TARGETPLATFORM
-RUN SOURCE_DATE_EPOCH="$(git show -s --format=format:%ct HEAD)" && \
+RUN echo "Building for ${TARGETPLATFORM}..." && \
+    SOURCE_DATE_EPOCH="$(git show -s --format=format:%ct HEAD)" && \
     BUILD_DATE="$(date ${SOURCE_DATE_EPOCH:+"--date=@${SOURCE_DATE_EPOCH}"} -u +'%Y-%m-%dT%H:%M:%SZ')" && \
     GITCOMMIT="$(git rev-parse HEAD)" && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \

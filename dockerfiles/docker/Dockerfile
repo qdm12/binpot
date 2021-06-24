@@ -16,7 +16,8 @@ ARG VERSION=v20.10.7
 WORKDIR /go/src/github.com/docker/cli
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/docker/cli.git .
 ARG TARGETPLATFORM
-RUN GITCOMMIT="$(git rev-parse --short HEAD)" && \
+RUN echo "Building for ${TARGETPLATFORM}..." && \
+    GITCOMMIT="$(git rev-parse --short HEAD)" && \
     BUILDTIME="$(date -u +"%Y-%m-%dT%H:%M:%SZ")" && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \

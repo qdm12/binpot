@@ -16,10 +16,10 @@ ARG VERSION=v1.6.1
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/go-delve/delve.git .
 RUN go mod download
 ARG TARGETPLATFORM
-RUN export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
+RUN echo "Building for ${TARGETPLATFORM}..." && \
+    export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
     export GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" && \
     if [ "${TARGETPLATFORM}" = "linux/amd64" ] || [ "${TARGETPLATFORM}" = "linux/arm64" ]; then \
-        echo "Building for ${TARGETPLATFORM}..." && \
         COMMIT="$(git rev-parse --short HEAD)" && \
         DATE="$(date +%Y-%m-%dT%T%z)" && \
         go build -trimpath -ldflags="-s -w" -o /tmp/bin ./cmd/dlv && \

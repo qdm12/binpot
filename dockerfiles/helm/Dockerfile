@@ -16,17 +16,16 @@ ARG VERSION=v3.6.1
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/helm/helm.git .
 RUN go mod download
 ARG TARGETPLATFORM
-RUN export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
-    export GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" && \
+RUN echo "Building for ${TARGETPLATFORM}..." && \
     if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then \
         go mod edit -replace=github.com/prometheus/procfs=github.com/prometheus/procfs@v0.6.0 && \
         go mod tidy; \
     fi && \
-    echo "Building for ${TARGETPLATFORM}..." && \
-    GITCOMMIT="$(git rev-parse HEAD)" && \
+    GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
+    GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
     -X 'helm.sh/helm/v3/internal/version.version=${VERSION}' \
-    -X 'helm.sh/helm/v3/internal/version.gitCommit=${GITCOMMIT}' \
+    -X 'helm.sh/helm/v3/internal/version.gitCommit=$(git rev-parse HEAD)' \
     -X 'helm.sh/helm/v3/internal/version.gitTreeState=clean' \
     " -o /tmp/bin ./cmd/helm && \
     chmod 500 /tmp/bin

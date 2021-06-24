@@ -16,19 +16,17 @@ ARG VERSION=v1.41.1
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/golangci/golangci-lint.git .
 RUN go mod download
 ARG TARGETPLATFORM
-RUN export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
-    export GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" && \
+RUN echo "Building for ${TARGETPLATFORM}..." && \
     if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then \
         go mod edit -replace=github.com/prometheus/procfs=github.com/prometheus/procfs@v0.6.0 && \
         go mod tidy; \
     fi && \
-    echo "Building for ${TARGETPLATFORM}..." && \
-    COMMIT="$(git rev-parse --short HEAD)" && \
-    DATE="$(date +%Y-%m-%dT%T%z)" && \
+    GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})"
+    GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})"
     go build -trimpath -ldflags="-s -w \
     -X 'main.version=${VERSION}' \
-    -X 'main.commit=${COMMIT}' \
-    -X 'main.date=${DATE}' \
+    -X 'main.commit=$(git rev-parse --short HEAD)' \
+    -X 'main.date=$(date +%Y-%m-%dT%T%z)' \
     " -o /tmp/bin ./cmd/golangci-lint && \
     chmod 500 /tmp/bin
 

@@ -17,7 +17,8 @@ WORKDIR /go/src/github.com/docker/cli
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/docker/compose-cli.git .
 RUN go mod download
 ARG TARGETPLATFORM
-RUN GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
+RUN echo "Building for ${TARGETPLATFORM}..." && \
+    GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
     -X 'github.com/docker/compose-cli/internal.Version=${VERSION}' \
