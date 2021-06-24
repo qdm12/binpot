@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/buildx.yml
-      - "unavailable/**"
       - "dockerfiles/buildx/**"
   pull_request:
     paths:
       - .github/workflows/buildx.yml
-      - "unavailable/**"
       - "dockerfiles/buildx/**"
 
 jobs:
