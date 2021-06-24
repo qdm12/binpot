@@ -42,6 +42,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `gh` | `v1.11.0` | `:gh-v1.11.0` | all |
 | `golangci-lint` | `v1.41.1` | `:golangci-lint` | all but `linux/riscv64` |
 | `golangci-lint` | `v1.41.1` | `:golangci-lint-v1.41.1` | all but `linux/riscv64` |
+| `gomock` | `v1.6.0` | `:gomock` | all |
+| `gomock` | `v1.6.0` | `:gomock-v1.6.0` | all |
 | `gopls` | `v0.7.0` | `:gopls` | all |
 | `gopls` | `v0.7.0` | `:gopls-v0.7.0` | all |
 | `helm` | `v3.6.1` | `:helm` | all but `linux/riscv64` |
