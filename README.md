@@ -38,6 +38,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `dlv` | `v1.6.1` | `:dlv-v1.6.1` | `linux/amd64` and `linux/arm64` |
 | `docker` | `v20.10.7` | `:docker` | all |
 | `docker` | `v20.10.7` | `:docker-v20.10.7` | all |
+| `gh` | `v1.11.0` | `:gh` | all |
+| `gh` | `v1.11.0` | `:gh-v1.11.0` | all |
 | `golangci-lint` | `v1.41.1` | `:golangci-lint` | all but `linux/riscv64` |
 | `golangci-lint` | `v1.41.1` | `:golangci-lint-v1.41.1` | all but `linux/riscv64` |
 | `gopls` | `v0.7.0` | `:gopls` | all |
