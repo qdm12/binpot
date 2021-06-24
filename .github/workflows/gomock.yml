@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/gomock.yml
-      - unavailable/*
       - dockerfiles/gomock/*
   pull_request:
     paths:
       - .github/workflows/gomock.yml
-      - unavailable/*
       - dockerfiles/gomock/*
 
 jobs:

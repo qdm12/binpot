@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/compose.yml
-      - unavailable/*
       - dockerfiles/compose/*
   pull_request:
     paths:
       - .github/workflows/compose.yml
-      - unavailable/*
       - dockerfiles/compose/*
 
 jobs:

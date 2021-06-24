@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/docker.yml
-      - unavailable/*
       - dockerfiles/docker/*
   pull_request:
     paths:
       - .github/workflows/docker.yml
-      - unavailable/*
       - dockerfiles/docker/*
 
 jobs:

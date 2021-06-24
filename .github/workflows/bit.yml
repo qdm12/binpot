@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/bit.yml
-      - unavailable/*
       - dockerfiles/bit/*
   pull_request:
     paths:
       - .github/workflows/bit.yml
-      - unavailable/*
       - dockerfiles/bit/*
 
 jobs:

@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/logo-ls.yml
-      - unavailable/*
       - dockerfiles/logo-ls/*
   pull_request:
     paths:
       - .github/workflows/logo-ls.yml
-      - unavailable/*
       - dockerfiles/logo-ls/*
 
 jobs:

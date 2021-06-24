@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/mockery.yml
-      - unavailable/*
       - dockerfiles/mockery/*
   pull_request:
     paths:
       - .github/workflows/mockery.yml
-      - unavailable/*
       - dockerfiles/mockery/*
 
 jobs:

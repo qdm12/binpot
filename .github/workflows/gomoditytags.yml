@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/gomoditytags.yml
-      - unavailable/*
       - dockerfiles/gomoditytags/*
   pull_request:
     paths:
       - .github/workflows/gomoditytags.yml
-      - unavailable/*
       - dockerfiles/gomoditytags/*
 
 jobs:

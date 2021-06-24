@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/goplay.yml
-      - unavailable/*
       - dockerfiles/goplay/*
   pull_request:
     paths:
       - .github/workflows/goplay.yml
-      - unavailable/*
       - dockerfiles/goplay/*
 
 jobs:

@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/gh.yml
-      - unavailable/*
       - dockerfiles/gh/*
   pull_request:
     paths:
       - .github/workflows/gh.yml
-      - unavailable/*
       - dockerfiles/gh/*
 
 jobs:

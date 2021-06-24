@@ -3,12 +3,10 @@ on:
   push:
     paths:
       - .github/workflows/gopls.yml
-      - unavailable/*
       - dockerfiles/gopls/*
   pull_request:
     paths:
       - .github/workflows/gopls.yml
-      - unavailable/*
       - dockerfiles/gopls/*
 
 jobs:
