@@ -62,8 +62,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `gotests` | `v1.6.0` | `:gotests-v1.6.0` | all |
 | `helm` | `v3.6.1` | `:helm` | all |
 | `helm` | `v3.6.1` | `:helm-v3.6.1` | all |
-| `impl` | `b761d8a` | `:impl` | all |
-| `impl` | `b761d8a` | `:impl-b761d8a` | all |
+| `impl` | `v1.1.0` | `:impl` | all |
+| `impl` | `v1.1.0` | `:impl-v1.1.0` | all |
 | `kubectl` | `v1.21.1` | `:kubectl` | all |
 | `kubectl` | `v1.21.1` | `:kubectl-v1.21.1` | all |
 | `kubectx` | `v0.9.3` | `:kubectx` | all |
@@ -122,4 +122,3 @@ Test Helm works with `helm`
 - Change Dockerfile if block when Golangci-lint supports RISV64 officially: [Github issue](https://github.com/golangci/golangci-lint/issues/2079)
 - Change Dockerfile if block when Helm supports RISV64 officially: [Github issue](https://github.com/helm/helm/issues/9858)
 - Change version of go-outline once a release tag is made: [Github issue](https://github.com/ramya-rao-a/go-outline/issues/15)
-- Change version of impl once a release tag is made: [Github issue](https://github.com/josharian/impl/issues/40)
