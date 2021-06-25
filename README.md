@@ -26,6 +26,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 **Need help?** ▶️ [Create a discussion](https://github.com/qdm12/binpot/discussions)
 
+[Thinking of copying the binary for your host?](#Copy-the-binary-on-your-host)
+
 ## Programs available
 
 | Program | Version | Image tag | Architectures |
@@ -95,6 +97,24 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 A substitute Go program printing `dlv v1.6.1 is unavailable on <platform name>` and exiting with exit code `1` is used for unsupported platforms.
 This is like so so you can still cross build with all the architectures, especially if the program is an optional dependency.
 This is often the case for VSCode development containers for instance. In this case, if you try to build for `arm/v7` and need `dlv` as an optional dependency, your `COPY --from=qmcgaw/binpot:dlv` will not fail.
+
+## Copy the binary on your host
+
+If you want to use the binary directly on your host, you can do it with Docker.
+This has the advantage that it will automatically get the right binary for your host platform.
+
+In the following we want to install `helm` on our host.
+
+For example:
+
+```sh
+PROGRAM="helm" docker pull "qmcgaw/binpot:$PROGRAM" && \
+  containerid="$(docker create qmcgaw/binpot:$PROGRAM)" && \
+  docker cp "$containerid:/bin" "/usr/local/bin/$PROGRAM" && \
+  docker rm "$containerid"
+```
+
+Test Helm works with `helm`
 
 ## TODOs
 
