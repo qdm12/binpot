@@ -32,54 +32,54 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 | Program | Version | Image tag | Architectures |
 | --- | --- | --- | --- |
-| `bit` | `v1.1.1` | `:bit` | all |
-| `bit` | `v1.1.1` | `:bit-v1.1.1` | all |
-| `buildx` | `31309b9` | `:buildx` | all |
-| `buildx` | `31309b9` | `:buildx-31309b9` | all |
-| `buildx` | `v0.5.1` | `:buildx-v0.5.1` | all |
-| `compose` | `v2.0.0-beta.4` | `:compose` | all |
-| `compose` | `v2.0.0-beta.4` | `:compose-v2.0.0-beta.4` | all |
-| `dlv` | `v1.6.1` | `:dlv` | `linux/amd64` and `linux/arm64` |
-| `dlv` | `v1.6.1` | `:dlv-v1.6.1` | `linux/amd64` and `linux/arm64` |
-| `docker` | `v20.10.7` | `:docker` | all |
-| `docker` | `v20.10.7` | `:docker-v20.10.7` | all |
-| `gh` | `v1.11.0` | `:gh` | all |
-| `gh` | `v1.11.0` | `:gh-v1.11.0` | all |
-| `golangci-lint` | `v1.41.1` | `:golangci-lint` | all |
-| `golangci-lint` | `v1.41.1` | `:golangci-lint-v1.41.1` | all |
-| `gomock` | `v1.6.0` | `:gomock` | all |
-| `gomock` | `v1.6.0` | `:gomock-v1.6.0` | all |
-| `gomodifytags` | `v1.13.0` | `:gomodifytags` | all |
-| `gomodifytags` | `v1.13.0` | `:gomodifytags-v1.13.0` | all |
-| `go-outline` | `9736a4b` | `:go-outline` | all |
-| `go-outline` | `9736a4b` | `:go-outline-9736a4b` | all |
-| `gopkgs` | `v2.1.2` | `:gopkgs` | all |
-| `gopkgs` | `v2.1.2` | `:gopkgs-v2.1.2` | all |
-| `goplay` | `v1.0.0` | `:goplay` | all |
-| `goplay` | `v1.0.0` | `:goplay-v1.0.0` | all |
-| `gopls` | `v0.7.0` | `:gopls` | all |
-| `gopls` | `v0.7.0` | `:gopls-v0.7.0` | all |
-| `gotests` | `v1.6.0` | `:gotests` | all |
-| `gotests` | `v1.6.0` | `:gotests-v1.6.0` | all |
-| `helm` | `v3.6.2` | `:helm` | all |
-| `helm` | `v3.6.2` | `:helm-v3.6.2` | all |
-| `helm` | `v3.6.1` | `:helm-v3.6.1` | all |
-| `impl` | `v1.1.0` | `:impl` | all |
-| `impl` | `v1.1.0` | `:impl-v1.1.0` | all |
-| `kubectl` | `v1.21.1` | `:kubectl` | all |
-| `kubectl` | `v1.21.1` | `:kubectl-v1.21.1` | all |
-| `kubectx` | `v0.9.3` | `:kubectx` | all |
-| `kubectx` | `v0.9.3` | `:kubectx-v0.9.3` | all |
-| `kubens` | `v0.9.3` | `:kubens` | all |
-| `kubens` | `v0.9.3` | `:kubens-v0.9.3` | all |
-| `logo-ls` | `v1.6.1` | `:logo-ls` | all |
-| `logo-ls` | `v1.6.1` | `:logo-ls-v1.3.7` | all |
-| `mockery` | `v2.9.0` | `:mockery` | all |
-| `mockery` | `v2.9.0` | `:mockery-v2.9.0` | all |
-| `mockgen` | `v1.6.0` | `:mockgen` | all |
-| `mockgen` | `v1.6.0` | `:mockgen-v1.6.0` | all |
-| `stern` | `v1.18.0` | `:stern` | all |
-| `stern` | `v1.18.0` | `:stern-v1.18.0` | all |
+| [`bit`](https://github.com/chriswalz/bit) | [`v1.1.1`](https://github.com/chriswalz/bit/releases/tag/v1.1.1) | [`:bit`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=bit) | all |
+| [`bit`](https://github.com/chriswalz/bit) | [`v1.1.1`](https://github.com/chriswalz/bit/releases/tag/v1.1.1) | [`:bit-v1.1.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=bit-v1.1.1) | all |
+| [`buildx`](https://github.com/docker/buildx) | [`31309b9`](https://github.com/docker/buildx/commit/31309b920571c451e256089683e7f6cdba8685e5) | [`:buildx`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx) | all |
+| [`buildx`](https://github.com/docker/buildx) | [`31309b9`](https://github.com/docker/buildx/commit/31309b920571c451e256089683e7f6cdba8685e5) | [`:buildx-31309b9`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-31309b9) | all |
+| [`buildx`](https://github.com/docker/buildx) | [`v0.5.1`](https://github.com/docker/buildx/releases/tag/v0.5.1) | [`:buildx-v0.5.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-v0.5.1) | all |
+| [`compose`](https://github.com/docker/compose-cli) | [`v2.0.0-beta.4`](https://github.com/docker/compose-cli/releases/tag/v2.0.0-beta.4) | [`:compose`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose) | all |
+| [`compose`](https://github.com/docker/compose-cli) | [`v2.0.0-beta.4`](https://github.com/docker/compose-cli/releases/tag/v2.0.0-beta.4) | [`:compose-v2.0.0-beta.4`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose-v2.0.0-beta.4) | all |
+| [`dlv`](https://github.com/go-delve/delve) | [`v1.6.1`](https://github.com/go-delve/delve/releases/tag/v1.6.1) | [`:dlv`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=dlv) | `linux/amd64` and `linux/arm64` |
+| [`dlv`](https://github.com/go-delve/delve) | [`v1.6.1`](https://github.com/go-delve/delve/releases/tag/v1.6.1) | [`:dlv-v1.6.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=dlv-v1.6.1) | `linux/amd64` and `linux/arm64` |
+| [`docker`](https://github.com/docker/cli) | [`v20.10.7`](https://github.com/docker/cli/releases/tag/v20.10.7) | [`:docker`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=docker) | all |
+| [`docker`](https://github.com/docker/cli) | [`v20.10.7`](https://github.com/docker/cli/releases/tag/v20.10.7) | [`:docker-v20.10.7`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=docker-v20.10.7) | all |
+| [`gh`](https://github.com/cli/cli) | [`v1.11.0`](https://github.com/cli/cli/releases/tag/v1.11.0) | [`:gh`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh) | all |
+| [`gh`](https://github.com/cli/cli) | [`v1.11.0`](https://github.com/cli/cli/releases/tag/v1.11.0) | [`:gh-v1.11.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v1.11.0) | all |
+| [`golangci-lint`](https://github.com/golangci/golangci-lint) | [`v1.41.1`](https://github.com/golangci/golangci-lint/releases/tag/v1.41.1) | [`:golangci-lint`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=golangci-lint) | all |
+| [`golangci-lint`](https://github.com/golangci/golangci-lint) | [`v1.41.1`](https://github.com/golangci/golangci-lint/releases/tag/v1.41.1) | [`:golangci-lint-v1.41.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=golangci-lint-v1.41.1) | all |
+| [`gomock`](https://github.com/golang/mock) | [`v1.6.0`](https://github.com/golang/mock/releases/tag/v1.6.0) | [`:gomock`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gomock) | all |
+| [`gomock`](https://github.com/golang/mock) | [`v1.6.0`](https://github.com/golang/mock/releases/tag/v1.6.0) | [`:gomock-v1.6.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gomock-v1.6.0) | all |
+| [`gomodifytags`](https://github.com/fatih/gomodifytags) | [`v1.13.0`](https://github.com/fatih/gomodifytags/releases/tag/v1.13.0) | [`:gomodifytags`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gomodifytags) | all |
+| [`gomodifytags`](https://github.com/fatih/gomodifytags) | [`v1.13.0`](https://github.com/fatih/gomodifytags/releases/tag/v1.13.0) | [`:gomodifytags-v1.13.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gomodifytags-v1.13.0) | all |
+| [`go-outline`](https://github.com/ramya-rao-a/go-outline) | [`9736a4b`](https://github.com/ramya-rao-a/go-outline/commit/9736a4bde949f321d201e5eaa5ae2bcde011bf00) | [`:go-outline`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=go-outline) | all |
+| [`go-outline`](https://github.com/ramya-rao-a/go-outline) | [`9736a4b`](https://github.com/ramya-rao-a/go-outline/commit/9736a4bde949f321d201e5eaa5ae2bcde011bf00) | [`:go-outline-9736a4b`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=go-outline-9736a4b) | all |
+| [`gopkgs`](https://github.com/uudashr/gopkgs) | [`v2.1.2`](https://github.com/uudashr/gopkgs/releases/tag/v2.1.2) | [`:gopkgs`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gopkgs) | all |
+| [`gopkgs`](https://github.com/uudashr/gopkgs) | [`v2.1.2`](https://github.com/uudashr/gopkgs/releases/tag/v2.1.2) | [`:gopkgs-v2.1.2`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gopkgs-v2.1.2) | all |
+| [`goplay`](https://github.com/haya14busa/goplay) | [`v1.0.0`](https://github.com/haya14busa/goplay/releases/tag/v1.0.0) | [`:goplay`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=goplay) | all |
+| [`goplay`](https://github.com/haya14busa/goplay) | [`v1.0.0`](https://github.com/haya14busa/goplay/releases/tag/v1.0.0) | [`:goplay-v1.0.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=goplay-v1.0.0) | all |
+| [`gopls`](https://github.com/golang/tools/tree/master/gopls) | [`v0.7.0`](https://github.com/golang/tools/releases/tag/gopls%2Fv0.7.0) | [`:gopls`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gopls) | all |
+| [`gopls`](https://github.com/golang/tools/tree/master/gopls) | [`v0.7.0`](https://github.com/golang/tools/releases/tag/gopls%2Fv0.7.0) | [`:gopls-v0.7.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gopls-v0.7.0) | all |
+| [`gotests`](https://github.com/cweill/gotests) | [`v1.6.0`](https://github.com/cweill/gotests/releases/tag/v1.6.0) | [`:gotests`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gotests) | all |
+| [`gotests`](https://github.com/cweill/gotests) | [`v1.6.0`](https://github.com/cweill/gotests/releases/tag/v1.6.0) | [`:gotests-v1.6.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gotests-v1.6.0) | all |
+| [`helm`](https://github.com/helm/helm) | [`v3.6.2`](https://github.com/helm/helm/releases/tag/v3.6.2) | [`:helm`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=helm) | all |
+| [`helm`](https://github.com/helm/helm) | [`v3.6.2`](https://github.com/helm/helm/releases/tag/v3.6.2) | [`:helm-v3.6.2`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=helm-v3.6.2) | all |
+| [`helm`](https://github.com/helm/helm) | [`v3.6.1`](https://github.com/helm/helm/releases/tag/v3.6.1) | [`:helm-v3.6.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=helm-v3.6.1) | all |
+| [`impl`](https://github.com/josharian/impl) | [`v1.1.0`](https://github.com/josharian/impl/releases/tag/v1.1.0) | [`:impl`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=impl) | all |
+| [`impl`](https://github.com/josharian/impl) | [`v1.1.0`](https://github.com/josharian/impl/releases/tag/v1.1.0) | [`:impl-v1.1.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=impl-v1.1.0) | all |
+| [`kubectl`](https://github.com/kubernetes/kubernetes) | [`v1.21.1`](https://github.com/kubernetes/kubernetes/releases/tag/v1.21.2) | [`:kubectl`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=kubectl) | all |
+| [`kubectl`](https://github.com/kubernetes/kubernetes) | [`v1.21.1`](https://github.com/kubernetes/kubernetes/releases/tag/v1.21.2) | [`:kubectl-v1.21.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=kubectl-v1.21.1) | all |
+| [`kubectx`](https://github.com/ahmetb/kubectx) | [`v0.9.3`](https://github.com/ahmetb/kubectx/releases/tag/v0.9.3) | [`:kubectx`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=kubectx) | all |
+| [`kubectx`](https://github.com/ahmetb/kubectx) | [`v0.9.3`](https://github.com/ahmetb/kubectx/releases/tag/v0.9.3) | [`:kubectx-v0.9.3`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=kubectx-v0.9.3) | all |
+| [`kubens`](https://github.com/ahmetb/kubectx) | [`v0.9.3`](https://github.com/ahmetb/kubectx/releases/tag/v0.9.3) | [`:kubens`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=kubens) | all |
+| [`kubens`](https://github.com/ahmetb/kubectx) | [`v0.9.3`](https://github.com/ahmetb/kubectx/releases/tag/v0.9.3) | [`:kubens-v0.9.3`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=kubens-v0.9.3) | all |
+| [`logo-ls`](https://github.com/Yash-Handa/logo-ls) | [`v1.3.7`](https://github.com/Yash-Handa/logo-ls/releases/tag/v1.3.7) | [`:logo-ls`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=logo-ls) | all |
+| [`logo-ls`](https://github.com/Yash-Handa/logo-ls) | [`v1.3.7`](https://github.com/Yash-Handa/logo-ls/releases/tag/v1.3.7) | [`:logo-ls-v1.3.7`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=logo-ls-v1.3.7) | all |
+| [`mockery`](https://github.com/vektra/mockery) | [`v2.9.0`](https://github.com/vektra/mockery/releases/tag/v2.9.0) | [`:mockery`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockery) | all |
+| [`mockery`](https://github.com/vektra/mockery) | [`v2.9.0`](https://github.com/vektra/mockery/releases/tag/v2.9.0) | [`:mockery-v2.9.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockery-v2.9.0) | all |
+| [`mockgen`](https://github.com/golang/mock) | [`v1.6.0`](https://github.com/golang/mock/releases/tag/v1.6.0) | [`:mockgen`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockgen) | all |
+| [`mockgen`](https://github.com/golang/mock) | [`v1.6.0`](https://github.com/golang/mock/releases/tag/v1.6.0) | [`:mockgen-v1.6.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockgen-v1.6.0) | all |
+| [`stern`](https://github.com/stern/stern) | [`v1.18.0`](https://github.com/stern/stern/releases/tag/v1.19.0) | [`:stern`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern) | all |
+| [`stern`](https://github.com/stern/stern) | [`v1.18.0`](https://github.com/stern/stern/releases/tag/v1.19.0) | [`:stern-v1.18.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern-v1.18.0) | all |
 
 ℹ️ `all` architectures means: linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x,linux/riscv64
 
