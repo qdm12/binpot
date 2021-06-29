@@ -61,7 +61,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | `gopls` | `v0.7.0` | `:gopls-v0.7.0` | all |
 | `gotests` | `v1.6.0` | `:gotests` | all |
 | `gotests` | `v1.6.0` | `:gotests-v1.6.0` | all |
-| `helm` | `v3.6.1` | `:helm` | all |
+| `helm` | `v3.6.2` | `:helm` | all |
+| `helm` | `v3.6.2` | `:helm-v3.6.2` | all |
 | `helm` | `v3.6.1` | `:helm-v3.6.1` | all |
 | `impl` | `v1.1.0` | `:impl` | all |
 | `impl` | `v1.1.0` | `:impl-v1.1.0` | all |
