@@ -12,15 +12,15 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v0.5.1
+ARG VERSION=31309b9
 WORKDIR /go/src/github.com/docker/cli
-RUN git clone --depth 1 --branch ${VERSION} https://github.com/docker/buildx.git .
+RUN git clone --single-branch --branch master https://github.com/docker/buildx.git .
+RUN git checkout ${VERSION}
 RUN go mod download
 ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
     export GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" && \
     export GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" && \
-    if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then go get github.com/prometheus/procfs@v0.6.0 && go mod tidy; fi && \
     go build -trimpath -ldflags="-s -w \
     -X 'github.com/docker/buildx/version.Version=${VERSION}' \
     -X 'github.com/docker/buildx/version.Revision=$(git rev-parse HEAD)' \

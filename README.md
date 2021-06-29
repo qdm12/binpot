@@ -34,7 +34,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | --- | --- | --- | --- |
 | `bit` | `v1.1.1` | `:bit` | all |
 | `bit` | `v1.1.1` | `:bit-v1.1.1` | all |
-| `buildx` | `v0.5.1` | `:buildx` | all |
+| `buildx` | `31309b9` | `:buildx` | all |
+| `buildx` | `31309b9` | `:buildx-31309b9` | all |
 | `buildx` | `v0.5.1` | `:buildx-v0.5.1` | all |
 | `compose` | `v2.0.0-beta.4` | `:compose` | all |
 | `compose` | `v2.0.0-beta.4` | `:compose-v2.0.0-beta.4` | all |
@@ -118,7 +119,7 @@ Test Helm works with `helm`
 
 ## TODOs
 
-- Change Dockerfile if block when Buildx supports RISCV64 officially: [Github issue](https://github.com/docker/buildx/issues/643)
+- Change version of Buildx once a release tag after v0.5.1 is made for Buildx to support RISCV64 officially: [Github issue](https://github.com/docker/buildx/issues/643)
 - Change Dockerfile if block when Golangci-lint supports RISV64 officially: [Github issue](https://github.com/golangci/golangci-lint/issues/2079)
 - Change Dockerfile if block when Helm supports RISV64 officially: [Github issue](https://github.com/helm/helm/issues/9858)
 - Change version of go-outline once a release tag is made: [Github issue](https://github.com/ramya-rao-a/go-outline/issues/15)
