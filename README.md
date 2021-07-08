@@ -4,6 +4,8 @@ The statically compiled, cross architecture, Docker based, binaries pot.
 
 <img height="250" src="https://raw.githubusercontent.com/qdm12/binpot/main/binpot.svg?sanitize=true">
 
+[Blog post](https://qqq.ninja/blog/post/binpot/)
+
 ## Usage
 
 The usage is focused to build other Docker images.
