@@ -42,7 +42,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | [`buildx`](https://github.com/docker/buildx) | [`v0.5.1`](https://github.com/docker/buildx/releases/tag/v0.5.1) | [`:buildx-v0.5.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-v0.5.1) | all |
 | [`compose`](https://github.com/docker/compose-cli) | [`v2.0.0-beta.4`](https://github.com/docker/compose-cli/releases/tag/v2.0.0-beta.4) | [`:compose`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose) | all |
 | [`compose`](https://github.com/docker/compose-cli) | [`v2.0.0-beta.4`](https://github.com/docker/compose-cli/releases/tag/v2.0.0-beta.4) | [`:compose-v2.0.0-beta.4`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose-v2.0.0-beta.4) | all |
-| [`dlv`](https://github.com/go-delve/delve) | [`v1.6.1`](https://github.com/go-delve/delve/releases/tag/v1.6.1) | [`:dlv`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=dlv) | `linux/amd64` and `linux/arm64` |
+| [`dlv`](https://github.com/go-delve/delve) | [`v1.7.0`](https://github.com/go-delve/delve/releases/tag/v1.7.0) | [`:dlv`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=dlv) | `linux/amd64` and `linux/arm64` |
+| [`dlv`](https://github.com/go-delve/delve) | [`v1.7.0`](https://github.com/go-delve/delve/releases/tag/v1.7.0) | [`:dlv-v1.7.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=dlv-v1.6.1) | `linux/amd64` and `linux/arm64` |
 | [`dlv`](https://github.com/go-delve/delve) | [`v1.6.1`](https://github.com/go-delve/delve/releases/tag/v1.6.1) | [`:dlv-v1.6.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=dlv-v1.6.1) | `linux/amd64` and `linux/arm64` |
 | [`docker`](https://github.com/docker/cli) | [`v20.10.7`](https://github.com/docker/cli/releases/tag/v20.10.7) | [`:docker`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=docker) | all |
 | [`docker`](https://github.com/docker/cli) | [`v20.10.7`](https://github.com/docker/cli/releases/tag/v20.10.7) | [`:docker-v20.10.7`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=docker-v20.10.7) | all |
@@ -104,7 +105,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 ## Note on `dlv`
 
 💁 Concerning `dlv`: all images are built for all architectures even if the program does not support all of them.
-A substitute Go program printing `dlv v1.6.1 is unavailable on <platform name>` and exiting with exit code `1` is used for unsupported platforms.
+A substitute Go program printing `dlv v1.7.0 is unavailable on <platform name>` and exiting with exit code `1` is used for unsupported platforms.
 This is like so so you can still cross build with all the architectures, especially if the program is an optional dependency.
 This is often the case for VSCode development containers for instance. In this case, if you try to build for `arm/v7` and need `dlv` as an optional dependency, your `COPY --from=qmcgaw/binpot:dlv` will not fail.
 
