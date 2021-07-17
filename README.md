@@ -89,8 +89,9 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | [`mockery`](https://github.com/vektra/mockery) | [`v2.9.0`](https://github.com/vektra/mockery/releases/tag/v2.9.0) | [`:mockery-v2.9.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockery-v2.9.0) | all |
 | [`mockgen`](https://github.com/golang/mock) | [`v1.6.0`](https://github.com/golang/mock/releases/tag/v1.6.0) | [`:mockgen`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockgen) | all |
 | [`mockgen`](https://github.com/golang/mock) | [`v1.6.0`](https://github.com/golang/mock/releases/tag/v1.6.0) | [`:mockgen-v1.6.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockgen-v1.6.0) | all |
-| [`stern`](https://github.com/stern/stern) | [`v1.18.0`](https://github.com/stern/stern/releases/tag/v1.19.0) | [`:stern`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern) | all |
-| [`stern`](https://github.com/stern/stern) | [`v1.18.0`](https://github.com/stern/stern/releases/tag/v1.19.0) | [`:stern-v1.18.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern-v1.18.0) | all |
+| [`stern`](https://github.com/stern/stern) | [`v1.19.0`](https://github.com/stern/stern/releases/tag/v1.19.0) | [`:stern`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern) | all |
+| [`stern`](https://github.com/stern/stern) | [`v1.19.0`](https://github.com/stern/stern/releases/tag/v1.19.0) | [`:stern-v1.19.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern-v1.19.0) | all |
+| [`stern`](https://github.com/stern/stern) | [`v1.18.0`](https://github.com/stern/stern/releases/tag/v1.18.0) | [`:stern-v1.18.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern-v1.18.0) | all |
 
 ℹ️ `all` architectures means: linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x,linux/riscv64
 
