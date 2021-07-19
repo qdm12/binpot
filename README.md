@@ -2,7 +2,7 @@
 
 The statically compiled, cross architecture, Docker based, binaries pot.
 
-![Bin pot](https://raw.githubusercontent.com/qdm12/binpot/main/binpot.svg)
+<img height="150" src="https://raw.githubusercontent.com/qdm12/binpot/main/binpot.svg">
 
 [Blog post](https://qqq.ninja/blog/post/binpot/)
 
