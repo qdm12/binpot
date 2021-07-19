@@ -6,6 +6,8 @@ The statically compiled, cross architecture, Docker based, binaries pot.
 
 [Blog post](https://qqq.ninja/blog/post/binpot/)
 
+[![MIT](https://img.shields.io/github/license/qdm12/binpot)](https://github.com/qdm12/binpot/main/LICENSE)
+
 ## Usage
 
 The usage is focused to build other Docker images.
