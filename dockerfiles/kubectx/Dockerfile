@@ -20,7 +20,7 @@ RUN echo "Building for ${TARGETPLATFORM}..." && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
-    -X 'github.com/ahmetb/kubectx/cmd/kubectx.version=${VERSION}' \
+    -X 'main.version=${VERSION}' \
     " -o /tmp/bin ./cmd/kubectx && \
     chmod 500 /tmp/bin
 
