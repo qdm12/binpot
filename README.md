@@ -97,6 +97,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | [`stern`](https://github.com/stern/stern) | [`v1.19.0`](https://github.com/stern/stern/releases/tag/v1.19.0) | [`:stern`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern) | all |
 | [`stern`](https://github.com/stern/stern) | [`v1.19.0`](https://github.com/stern/stern/releases/tag/v1.19.0) | [`:stern-v1.19.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern-v1.19.0) | all |
 | [`stern`](https://github.com/stern/stern) | [`v1.18.0`](https://github.com/stern/stern/releases/tag/v1.18.0) | [`:stern-v1.18.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern-v1.18.0) | all |
+| [`supervisord`](https://github.com/ochinchina/supervisord) | [`v0.7.3`](https://github.com/ochinchina/supervisord/releases/tag/v0.7.3) | [`:supervisord`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=supervisord) | all |
+| [`supervisord`](https://github.com/ochinchina/supervisord) | [`v0.7.3`](https://github.com/ochinchina/supervisord/releases/tag/v0.7.3) | [`:supervisord-v0.7.3`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=supervisord-v0.7.3) | all |
 
 ℹ️ `all` architectures means: linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x,linux/riscv64
 
