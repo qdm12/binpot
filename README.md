@@ -15,7 +15,7 @@ The usage is focused to build other Docker images.
 For example:
 
 ```Dockerfile
-FROM alpine:3.13
+FROM alpine:3.14
 COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 ```
 
