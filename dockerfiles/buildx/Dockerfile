@@ -12,10 +12,9 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v0.6.1
+ARG VERSION=v0.6.2
 WORKDIR /go/src/github.com/docker/cli
-RUN git clone --single-branch --branch master https://github.com/docker/buildx.git .
-RUN git checkout ${VERSION}
+RUN git clone --single-branch --branch ${VERSION} https://github.com/docker/buildx.git .
 RUN go mod download
 ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
