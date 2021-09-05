@@ -12,7 +12,7 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v2.0.0-rc.1
+ARG VERSION=v2.0.0-rc.2
 WORKDIR /go/src/github.com/docker/cli
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/docker/compose-cli.git .
 RUN go mod download
