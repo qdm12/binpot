@@ -12,12 +12,11 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v3.6.3
+ARG VERSION=v3.7.0
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/helm/helm.git .
 RUN go mod download
 ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
-    if [ "${TARGETPLATFORM}" = "linux/riscv64" ]; then go get github.com/prometheus/procfs@v0.6.0 && go mod tidy; fi && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
