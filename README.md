@@ -101,7 +101,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | [`supervisord`](https://github.com/ochinchina/supervisord) | [`v0.7.3`](https://github.com/ochinchina/supervisord/releases/tag/v0.7.3) | [`:supervisord`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=supervisord) | all |
 | [`supervisord`](https://github.com/ochinchina/supervisord) | [`v0.7.3`](https://github.com/ochinchina/supervisord/releases/tag/v0.7.3) | [`:supervisord-v0.7.3`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=supervisord-v0.7.3) | all |
 
-ℹ️ `all` architectures means: linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x,linux/riscv64
+ℹ️ `all` architectures means: linux/amd64, linux/386, linux/arm64, linux/arm/v7, linux/arm/v6, linux/ppc64le, linux/s390x, linux/riscv64
 
 **Want more!?** ▶️ [Create an issue!](https://github.com/qdm12/binpot/issues)
 
@@ -140,7 +140,4 @@ Test Helm works with `helm`
 
 ## TODOs
 
-- Change version of Buildx once a release tag after v0.5.1 is made for Buildx to support RISCV64 officially: [Github issue](https://github.com/docker/buildx/issues/643)
-- Change Dockerfile if block when Golangci-lint supports RISV64 officially: [Github issue](https://github.com/golangci/golangci-lint/issues/2079)
-- Change Dockerfile if block when Helm supports RISV64 officially: [Github issue](https://github.com/helm/helm/issues/9858)
 - Change version of go-outline once a release tag is made: [Github issue](https://github.com/ramya-rao-a/go-outline/issues/15)
