@@ -36,13 +36,12 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 💁 Only the last bug fix releases for each program feature release is kept in the following table.
 
-| Program | Version | Image tag | Architectures |
+| Program | Version | Image tags | Architectures |
 | --- | --- | --- | --- |
 | [`bit`](https://github.com/chriswalz/bit) | [`v1.1.2`](https://github.com/chriswalz/bit/releases/tag/v1.1.2) | [`:bit`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=bit) | all |
-| [`bit`](https://github.com/chriswalz/bit) | [`v1.1.2`](https://github.com/chriswalz/bit/releases/tag/v1.1.2) | [`:bit`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=bit-v1.1.2) | all |
+| [`bit`](https://github.com/chriswalz/bit) | [`v1.1.2`](https://github.com/chriswalz/bit/releases/tag/v1.1.2) | [`:bit-v1.1.2`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=bit-v1.1.2) | all |
 | [`buildx`](https://github.com/docker/buildx) | [`v0.6.3`](https://github.com/docker/buildx/releases/tag/v0.6.3) | [`:buildx`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx) | all |
 | [`buildx`](https://github.com/docker/buildx) | [`v0.6.3`](https://github.com/docker/buildx/releases/tag/v0.6.3) | [`:buildx-v0.6.3`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-v0.6.3) | all |
-| [`buildx`](https://github.com/docker/buildx) | [`31309b9`](https://github.com/docker/buildx/commit/31309b920571c451e256089683e7f6cdba8685e5) | [`:buildx-31309b9`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-31309b9) | all |
 | [`buildx`](https://github.com/docker/buildx) | [`v0.5.1`](https://github.com/docker/buildx/releases/tag/v0.5.1) | [`:buildx-v0.5.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-v0.5.1) | all |
 | [`compose`](https://github.com/docker/compose-cli) | [`v2.0.0-rc.2`](https://github.com/docker/compose-cli/releases/tag/v2.0.0-rc.2) | [`:compose`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose) | all |
 | [`compose`](https://github.com/docker/compose-cli) | [`v2.0.0-rc.2`](https://github.com/docker/compose-cli/releases/tag/v2.0.0-rc.2) | [`:compose-v2.0.0-rc.2`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose-v2.0.0-rc.2) | all |
@@ -52,10 +51,10 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | [`docker`](https://github.com/docker/cli) | [`v20.10.7`](https://github.com/docker/cli/releases/tag/v20.10.7) | [`:docker`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=docker) | all |
 | [`docker`](https://github.com/docker/cli) | [`v20.10.7`](https://github.com/docker/cli/releases/tag/v20.10.7) | [`:docker-v20.10.7`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=docker-v20.10.7) | all |
 | [`gh`](https://github.com/cli/cli) | [`v2.0.0`](https://github.com/cli/cli/releases/tag/v2.0.0) | [`:gh`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh) | all |
-| [`gh`](https://github.com/cli/cli) | [`v2.0.0`](https://github.com/cli/cli/releases/tag/v2.0.0) | [`:gh`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v2.0.0) | all |
-| [`gh`](https://github.com/cli/cli) | [`v1.14.0`](https://github.com/cli/cli/releases/tag/v1.14.0) | [`:gh`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v1.14.0) | all |
-| [`gh`](https://github.com/cli/cli) | [`v1.13.1`](https://github.com/cli/cli/releases/tag/v1.13.1) | [`:gh`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v1.13.1) | all |
-| [`gh`](https://github.com/cli/cli) | [`v1.12.1`](https://github.com/cli/cli/releases/tag/v1.12.1) | [`:gh`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v1.12.1) | all |
+| [`gh`](https://github.com/cli/cli) | [`v2.0.0`](https://github.com/cli/cli/releases/tag/v2.0.0) | [`:gh-v2.0.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v2.0.0) | all |
+| [`gh`](https://github.com/cli/cli) | [`v1.14.0`](https://github.com/cli/cli/releases/tag/v1.14.0) | [`:gh-v1.14.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v1.14.0) | all |
+| [`gh`](https://github.com/cli/cli) | [`v1.13.1`](https://github.com/cli/cli/releases/tag/v1.13.1) | [`:gh-v1.13.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v1.13.1) | all |
+| [`gh`](https://github.com/cli/cli) | [`v1.12.1`](https://github.com/cli/cli/releases/tag/v1.12.1) | [`:gh-v1.12.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v1.12.1) | all |
 | [`gh`](https://github.com/cli/cli) | [`v1.11.0`](https://github.com/cli/cli/releases/tag/v1.11.0) | [`:gh-v1.11.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh-v1.11.0) | all |
 | [`golangci-lint`](https://github.com/golangci/golangci-lint) | [`v1.42.1`](https://github.com/golangci/golangci-lint/releases/tag/v1.42.1) | [`:golangci-lint`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=golangci-lint) | all |
 | [`golangci-lint`](https://github.com/golangci/golangci-lint) | [`v1.42.1`](https://github.com/golangci/golangci-lint/releases/tag/v1.42.1) | [`:golangci-lint-v1.42.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=golangci-lint-v1.42.1) | all |
