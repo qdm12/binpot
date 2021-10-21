@@ -19,7 +19,9 @@ ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
-    go build -trimpath -ldflags="-s -w" -o /tmp/bin && \
+    go build -trimpath -ldflags=" \
+    -s -w -X github.com/vektra/mockery/v2/pkg/config.SemVer=${VERSION} \
+    " -o /tmp/bin && \
     chmod 500 /tmp/bin
 
 FROM scratch
