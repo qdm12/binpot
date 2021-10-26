@@ -133,7 +133,8 @@ In the following we want to install `helm` on our host.
 For example:
 
 ```sh
-PROGRAM="helm" docker pull "qmcgaw/binpot:$PROGRAM" && \
+export PROGRAM="helm" && \
+  docker pull "qmcgaw/binpot:$PROGRAM" && \
   containerid="$(docker create qmcgaw/binpot:$PROGRAM)" && \
   docker cp "$containerid:/bin" "/usr/local/bin/$PROGRAM" && \
   docker rm "$containerid"
