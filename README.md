@@ -19,6 +19,8 @@ FROM alpine:3.14
 COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 ```
 
+[🔍 Search for all image tags 💡](https://hub.docker.com/r/qmcgaw/binpot/tags)
+
 - The Docker image tags for `qmcgaw/binpot` follow the following formatting:
   - `:name` for the latest stable version of the program `name`
   - `:name-v0.0.0` for the semver version of the program `name`
