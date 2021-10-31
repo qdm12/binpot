@@ -12,16 +12,16 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v2.0.0-rc.2
+ARG VERSION=v2.0.1
 WORKDIR /go/src/github.com/docker/cli
-RUN git clone --depth 1 --branch ${VERSION} https://github.com/docker/compose-cli.git .
+RUN git clone --depth 1 --branch ${VERSION} https://github.com/docker/compose.git .
 RUN go mod download
 ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
-    -X 'github.com/docker/compose-cli/internal.Version=${VERSION}' \
+    -X 'github.com/docker/compose/v2/internal.Version=${VERSION}' \
     " -o /tmp/bin ./cmd && \
     chmod 500 /tmp/bin
 
