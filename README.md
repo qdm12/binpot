@@ -42,8 +42,8 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | --- | --- | --- | --- |
 | [`bit`](https://github.com/chriswalz/bit) | [`v1.1.2`](https://github.com/chriswalz/bit/releases/tag/v1.1.2) | [`:bit`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=bit) | all |
 | [`bit`](https://github.com/chriswalz/bit) | [`v1.1.2`](https://github.com/chriswalz/bit/releases/tag/v1.1.2) | [`:bit-v1.1.2`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=bit-v1.1.2) | all |
-| [`buildx`](https://github.com/docker/buildx) | [`v0.7.0`](https://github.com/docker/buildx/releases/tag/v0.7.0) | [`:buildx`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx) | all |
-| [`buildx`](https://github.com/docker/buildx) | [`v0.7.0`](https://github.com/docker/buildx/releases/tag/v0.7.0) | [`:buildx-v0.7.0`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-v0.7.0) | all |
+| [`buildx`](https://github.com/docker/buildx) | [`v0.7.1`](https://github.com/docker/buildx/releases/tag/v0.7.1) | [`:buildx`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx) | all |
+| [`buildx`](https://github.com/docker/buildx) | [`v0.7.1`](https://github.com/docker/buildx/releases/tag/v0.7.1) | [`:buildx-v0.7.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-v0.7.1) | all |
 | [`buildx`](https://github.com/docker/buildx) | [`v0.6.3`](https://github.com/docker/buildx/releases/tag/v0.6.3) | [`:buildx-v0.6.3`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-v0.6.3) | all |
 | [`buildx`](https://github.com/docker/buildx) | [`v0.5.1`](https://github.com/docker/buildx/releases/tag/v0.5.1) | [`:buildx-v0.5.1`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx-v0.5.1) | all |
 | [`compose`](https://github.com/docker/compose) | [`v2.1.0`](https://github.com/docker/compose/releases/tag/v2.1.0) | [`:compose`](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose) | all |
