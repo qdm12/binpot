@@ -1,4 +1,4 @@
-ARG ALPINE_VERSION=3.14
+ARG ALPINE_VERSION=3.15
 ARG GO_VERSION=1.17
 ARG XCPU_VERSION=v0.6.0
 ARG BUILDPLATFORM=linux/amd64
@@ -18,14 +18,14 @@ RUN go mod download
 ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
     if [ "${TARGETPLATFORM}" = "linux/amd64" ] || [ "${TARGETPLATFORM}" = "linux/arm64" ]; then \
-        GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
-        GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
-        go build -trimpath -ldflags="-s -w" -o /tmp/bin ./cmd/dlv && \
-        chmod 500 /tmp/bin && \
-        exit 0; \
+    GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
+    GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
+    go build -trimpath -ldflags="-s -w" -o /tmp/bin ./cmd/dlv && \
+    chmod 500 /tmp/bin && \
+    exit 0; \
     fi && \
     wget -qO- https://raw.githubusercontent.com/qdm12/binpot/main/unavailable/build.sh | \
-       sh -s -- "dlv ${VERSION}" "${TARGETPLATFORM}"
+    sh -s -- "dlv ${VERSION}" "${TARGETPLATFORM}"
 
 FROM scratch
 ENTRYPOINT [ "/bin" ]
