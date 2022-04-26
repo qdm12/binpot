@@ -38,7 +38,7 @@ jobs:
       - name: Set variables
         id: vars
         run: |
-          echo ::set-output name=version::v1.23.4
+          echo ::set-output name=version::v1.23.5
           echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x,linux/riscv64
           echo ::set-output name=created::$(date -u +%Y-%m-%dT%H:%M:%SZ)
           echo ::set-output name=revision::$(git rev-parse --short HEAD)
