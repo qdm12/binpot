@@ -12,7 +12,7 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v1.23.6
+ARG VERSION=v1.24.0
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/kubernetes/kubernetes.git .
 RUN go mod download
 ARG TARGETPLATFORM
