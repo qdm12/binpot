@@ -19,7 +19,12 @@ ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
-    go build -trimpath -ldflags="-s -w" -o /tmp/bin ./mockgen && \
+    go build -trimpath -ldflags="-s -w \
+    -X 'main.version=${VERSION:1}' \
+    -X 'main.commit=$(git rev-parse --short HEAD)' \
+    -X 'main.date=$(date -u +%Y-%m-%dT%H:%M:%SZ)' \
+    " \
+    -o /tmp/bin ./mockgen && \
     chmod 500 /tmp/bin
 
 FROM scratch
