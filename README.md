@@ -39,7 +39,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | Program | Last version | Image tags | Architectures |
 | --- | --- | --- | --- |
 | [`bit`](https://github.com/chriswalz/bit) | [`v1.1.2`](https://github.com/chriswalz/bit/releases/tag/v1.1.2) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=bit) | all |
-| [`buildx`](https://github.com/docker/buildx) | [`v0.8.2`](https://github.com/docker/buildx/releases/tag/v0.8.2) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx) | all |
+| [`buildx`](https://github.com/docker/buildx) | [`v0.9.1`](https://github.com/docker/buildx/releases/tag/v0.9.1) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx) | all |
 | [`compose`](https://github.com/docker/compose) | [`v2.9.0`](https://github.com/docker/compose/releases/tag/v2.9.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose) | all |
 | [`dlv`](https://github.com/go-delve/delve) | [`v1.9.1`](https://github.com/go-delve/delve/releases/tag/v1.9.1) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=dlv) | `linux/amd64` and `linux/arm64` |
 | [`docker`](https://github.com/docker/cli) | [`v20.10.17`](https://github.com/docker/cli/releases/tag/v20.10.17) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=docker) | all |
