@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: dlv
-      version: v1.9.0
+      version: v1.9.1
