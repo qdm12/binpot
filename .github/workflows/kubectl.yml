@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: kubectl
-      version: v1.25.1
+      version: v1.25.2
