@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: docker
-      version: v20.10.21
+      version: v20.10.22
