@@ -12,7 +12,7 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v1.1.0
+ARG VERSION=v1.2.0
 RUN git clone --branch ${VERSION} --single-branch https://github.com/josharian/impl.git .
 RUN git checkout ${VERSION}
 RUN go mod download
