@@ -13,7 +13,7 @@ COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
 ARG VERSION=v2.1.2
-RUN git clone --branch master --single-branch https://github.com/uudashr/gopkgs.git .
+RUN git clone --branch ${VERSION} --single-branch https://github.com/uudashr/gopkgs.git .
 RUN git checkout ${VERSION}
 RUN go mod download
 ARG TARGETPLATFORM
