@@ -3,12 +3,12 @@ on:
   push:
     paths:
       - .github/workflows/golangci-lint.yml
-      - "golangci-lintfiles/golangci-lint/**"
+      - "dockerfiles/golangci-lint/**"
       - .github/workflows/reusable.yml
   pull_request:
     paths:
       - .github/workflows/golangci-lint.yml
-      - "golangci-lintfiles/golangci-lint/**"
+      - "dockerfiles/golangci-lint/**"
       - .github/workflows/reusable.yml
 
 jobs:
