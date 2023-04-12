@@ -13,7 +13,7 @@ COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
 ARG VERSION=9736a4b
-RUN git clone --branch ${VERSION} --single-branch https://github.com/ramya-rao-a/go-outline.git .
+RUN git clone --single-branch https://github.com/ramya-rao-a/go-outline.git .
 RUN git checkout ${VERSION}
 RUN go mod download
 ARG TARGETPLATFORM
