@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: mockery
-      version: v2.24.0
+      version: v2.27.1
