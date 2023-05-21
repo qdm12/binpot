@@ -32,7 +32,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 
 **Need help?** ▶️ [Create a discussion](https://github.com/qdm12/binpot/discussions)
 
-[Thinking of copying the binary for your host?](#Copy-the-binary-on-your-host)
+[Thinking of copying the binary for your host?](#copy-the-binary-on-your-host)
 
 ## Programs available
 
