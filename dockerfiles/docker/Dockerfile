@@ -12,7 +12,7 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v23.0.0
+ARG VERSION=v24.0.1
 WORKDIR /go/src/github.com/docker/cli
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/docker/cli.git .
 ARG TARGETPLATFORM
