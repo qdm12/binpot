@@ -12,7 +12,7 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v2.27.1
+ARG VERSION=v2.30.1
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/vektra/mockery.git .
 RUN go mod download
 ARG TARGETPLATFORM
