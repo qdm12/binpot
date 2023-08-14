@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: kubens
-      version: v0.9.4
+      version: v0.9.5
