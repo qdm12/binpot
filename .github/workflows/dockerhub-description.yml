@@ -7,7 +7,7 @@ on:
       - .github/workflows/dockerhub-description.yml
 jobs:
   docker-hub-description:
-    if: github.repository == 'qdm12/gluetun'
+    if: github.repository == 'qdm12/binpot'
     runs-on: ubuntu-latest
     permissions:
       actions: read
