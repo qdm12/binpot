@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: gopls
-      version: v0.13.2
+      version: v0.14.2
