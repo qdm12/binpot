@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: stern
-      version: v1.25.0
+      version: v1.27.0
