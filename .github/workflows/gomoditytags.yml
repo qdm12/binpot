@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: gomodifytags
-      version: v1.16.0
+      version: v1.17.0
