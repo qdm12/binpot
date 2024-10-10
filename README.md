@@ -40,7 +40,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | --- | --- | --- | --- |
 | [`bit`](https://github.com/chriswalz/bit) | [`v1.1.2`](https://github.com/chriswalz/bit/releases/tag/v1.1.2) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=bit) | all |
 | [`buildx`](https://github.com/docker/buildx) | [`v0.12.1`](https://github.com/docker/buildx/releases/tag/v0.12.1) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=buildx) | all |
-| [`compose`](https://github.com/docker/compose) | [`v2.24.5`](https://github.com/docker/compose/releases/tag/v2.24.5) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose) | all |
+| [`compose`](https://github.com/docker/compose) | [`v2.29.7`](https://github.com/docker/compose/releases/tag/v2.29.7) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=compose) | all |
 | [`dlv`](https://github.com/go-delve/delve) | [`v1.23.1`](https://github.com/go-delve/delve/releases/tag/v1.23.1) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=dlv) | `linux/amd64` and `linux/arm64` |
 | [`docker`](https://github.com/docker/cli) | [`v25.0.2`](https://github.com/docker/cli/releases/tag/v25.0.2) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=docker) | all |
 | [`gh`](https://github.com/cli/cli) | [`v2.58.0`](https://github.com/cli/cli/releases/tag/v2.58.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh) | all |
