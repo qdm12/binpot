@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: gh
-      version: v2.43.1
+      version: v2.58.0
