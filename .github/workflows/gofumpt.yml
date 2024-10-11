@@ -1,0 +1,20 @@
+name: gofumpt
+on:
+  push:
+    paths:
+      - .github/workflows/gofumpt.yml
+      - "dockerfiles/gofumpt/**"
+      - .github/workflows/reusable.yml
+  pull_request:
+    paths:
+      - .github/workflows/gofumpt.yml
+      - "dockerfiles/gofumpt/**"
+      - .github/workflows/reusable.yml
+
+jobs:
+  gofumpt:
+    uses: ./.github/workflows/reusable.yml
+    secrets: inherit
+    with:
+      name: gofumpt
+      version: v0.7.0

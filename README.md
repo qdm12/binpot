@@ -44,6 +44,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | [`dlv`](https://github.com/go-delve/delve) | [`v1.23.1`](https://github.com/go-delve/delve/releases/tag/v1.23.1) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=dlv) | `linux/amd64` and `linux/arm64` |
 | [`docker`](https://github.com/docker/cli) | [`v27.3.1`](https://github.com/docker/cli/releases/tag/v27.3.1) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=docker) | all |
 | [`gh`](https://github.com/cli/cli) | [`v2.58.0`](https://github.com/cli/cli/releases/tag/v2.58.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gh) | all |
+| [`gofumpt`](https://github.com/mvdan/gofumpt) | [`v0.7.0`](https://github.com/mvdan/gofumpt/releases/tag/v0.7.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gofumpt) | all |
 | [`golangci-lint`](https://github.com/golangci/golangci-lint) | [`v1.61.0`](https://github.com/golangci/golangci-lint/releases/tag/v1.61.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=golangci-lint) | all |
 | [`gomock`](https://github.com/golang/mock) | [`v1.6.0`](https://github.com/golang/mock/releases/tag/v1.6.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gomock) | all |
 | [`gomodifytags`](https://github.com/fatih/gomodifytags) | [`v1.17.0`](https://github.com/fatih/gomodifytags/releases/tag/v1.17.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=gomodifytags) | all |
