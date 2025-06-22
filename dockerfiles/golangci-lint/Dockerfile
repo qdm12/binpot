@@ -12,14 +12,16 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v1.63.4
+ARG VERSION=v2.1.6
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/golangci/golangci-lint.git .
 RUN go mod download
 ARG TARGETPLATFORM
+ARG GO_VERSION=1.24
 RUN echo "Building for ${TARGETPLATFORM}..." && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
     go build -trimpath -ldflags="-s -w \
+    -X 'main.goVersion=${GO_VERSION}' \
     -X 'main.version=${VERSION}' \
     -X 'main.commit=$(git rev-parse --short HEAD)' \
     -X 'main.date=$(date +%Y-%m-%dT%T%z)' \
