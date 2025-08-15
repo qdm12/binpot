@@ -75,7 +75,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 2. For each program, a Github Action workflow is triggered when its Dockerfile or the workflow itself is changed. This workflow takes care of:
     1. Cross build the program for all CPU architectures
         - If one architecture is not supported such as for `dlv`, build the [unavailable](unavailable) program
-    2. Pushing the images containing the program to Docker Hub
+    2. Pushing the images containing the program to Docker Hub **and** ghcr.io
 
 ## Note on `dlv`
 

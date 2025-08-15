@@ -31,6 +31,7 @@ jobs:
     permissions:
       actions: read
       contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v4
 
@@ -41,6 +42,12 @@ jobs:
         with:
           username: qmcgaw
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: qdm12
+          password: ${{ github.token }}
 
       - name: Set variables
         id: vars
@@ -60,4 +67,6 @@ jobs:
           tags: |
             qmcgaw/binpot:${{ inputs.name }}
             qmcgaw/binpot:${{ inputs.name }}-${{ inputs.version }}
+            ghcr.io/qdm12/binpot:${{ inputs.name }}
+            ghcr.io/qdm12/binpot:${{ inputs.name }}-${{ inputs.version }}
           push: true
