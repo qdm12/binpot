@@ -1,8 +1,8 @@
 ARG ALPINE_VERSION=3.22
-ARG XCPU_VERSION=v0.6.0
+ARG XCPU_VERSION=v0.9.0
 ARG BUILDPLATFORM=linux/amd64
 
-FROM --platform=${BUILDPLATFORM} qmcgaw/xcputranslate:v0.6.0 AS xcputranslate
+FROM --platform=${BUILDPLATFORM} ghcr.io/qdm12/xcputranslate:v0.6.0 AS xcputranslate
 
 FROM --platform=${BUILDPLATFORM} alpine:${ALPINE_VERSION} AS build
 RUN apk add --no-cache g++ make binutils cmake git && \

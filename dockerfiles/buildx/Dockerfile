@@ -1,9 +1,9 @@
 ARG ALPINE_VERSION=3.22
 ARG GO_VERSION=1.25
-ARG XCPU_VERSION=v0.6.0
+ARG XCPU_VERSION=v0.9.0
 ARG BUILDPLATFORM=linux/amd64
 
-FROM --platform=${BUILDPLATFORM} qmcgaw/xcputranslate:${XCPU_VERSION} AS xcputranslate
+FROM --platform=${BUILDPLATFORM} ghcr.io/qdm12/xcputranslate:${XCPU_VERSION} AS xcputranslate
 
 FROM --platform=${BUILDPLATFORM} golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS build
 ENV CGO_ENABLED=0
