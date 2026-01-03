@@ -61,7 +61,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | [`logo-ls`](https://github.com/Yash-Handa/logo-ls) | [`v1.3.7`](https://github.com/Yash-Handa/logo-ls/releases/tag/v1.3.7) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=logo-ls) | all |
 | [`logo-ls`](https://github.com/Yash-Handa/logo-ls) | [`v1.3.7`](https://github.com/Yash-Handa/logo-ls/releases/tag/v1.3.7) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=logo-ls-v1.3.7) | all |
 | [`mockery`](https://github.com/vektra/mockery) | [`v3.5.2`](https://github.com/vektra/mockery/releases/tag/v3.5.2) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockery) | all |
-| [`mockgen`](https://github.com/golang/mock) | [`v1.6.0`](https://github.com/golang/mock/releases/tag/v1.6.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockgen) | all |
+| [`mockgen`](https://github.com/uber-go/mock) | [`v0.6.0`](https://github.com/uber-go/mock/releases/tag/v0.6.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockgen) | all |
 | [`stern`](https://github.com/stern/stern) | [`v1.32.0`](https://github.com/stern/stern/releases/tag/v1.32.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern) | all |
 | [`supervisord`](https://github.com/ochinchina/supervisord) | [`v0.7.3`](https://github.com/ochinchina/supervisord/releases/tag/v0.7.3) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=supervisord) | all |
 

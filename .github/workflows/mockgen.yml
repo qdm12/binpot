@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: mockgen
-      version: v1.6.0
+      version: v0.6.0
