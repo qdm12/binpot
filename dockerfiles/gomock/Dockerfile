@@ -12,8 +12,8 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v1.6.0
-RUN git clone --depth 1 --branch ${VERSION} https://github.com/golang/mock.git .
+ARG VERSION=v0.6.0
+RUN git clone --depth 1 --branch ${VERSION} https://github.com/uber-go/mock.git .
 RUN go mod download
 ARG TARGETPLATFORM
 RUN echo "Building for ${TARGETPLATFORM}..." && \
