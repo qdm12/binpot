@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: docker
-      version: v28.2.2
+      version: v29.4.0
