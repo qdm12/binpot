@@ -1,5 +1,5 @@
 ARG ALPINE_VERSION=3.23
-ARG GO_VERSION=1.25
+ARG GO_VERSION=1.26
 ARG XCPU_VERSION=v0.9.0
 ARG BUILDPLATFORM=linux/amd64
 
@@ -16,7 +16,7 @@ ARG VERSION=v2.4.0
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/golangci/golangci-lint.git .
 RUN go mod download
 ARG TARGETPLATFORM
-ARG GO_VERSION=1.25
+ARG GO_VERSION=1.26
 RUN echo "Building for ${TARGETPLATFORM}..." && \
     GOARCH="$(xcputranslate translate -field arch -targetplatform ${TARGETPLATFORM})" \
     GOARM="$(xcputranslate translate -field arm -targetplatform ${TARGETPLATFORM})" \
