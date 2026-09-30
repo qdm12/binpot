@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: golangci-lint
-      version: v2.11.4
+      version: v2.14.0
