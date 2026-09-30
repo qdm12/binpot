@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: compose
-      version: v5.1.1
+      version: v5.5.1
