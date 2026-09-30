@@ -17,4 +17,4 @@ jobs:
     secrets: inherit
     with:
       name: helm
-      version: v4.1.3
+      version: v4.3.0
