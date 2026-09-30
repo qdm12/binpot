@@ -12,7 +12,7 @@ RUN apk add --no-cache git && \
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v0.21.1
+ARG VERSION=v0.23.0
 RUN git clone --depth 1 --branch "gopls/${VERSION}" https://github.com/golang/tools.git .
 RUN go mod download
 ARG TARGETPLATFORM
