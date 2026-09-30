@@ -11,7 +11,7 @@ RUN apk add --no-cache -X "https://dl-cdn.alpinelinux.org/alpine/v3.14/community
 COPY --from=xcputranslate /xcputranslate /usr/local/bin/xcputranslate
 WORKDIR /tmp/build
 
-ARG VERSION=v1.5.2
+ARG VERSION=v1.5.5
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/romkatv/gitstatus.git .
 RUN apk add --update -X "https://dl-cdn.alpinelinux.org/alpine/v3.14/community" gcc-cross-embedded
 ARG TARGETPLATFORM
