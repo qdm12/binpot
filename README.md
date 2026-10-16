@@ -63,6 +63,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | [`logo-ls`](https://github.com/Yash-Handa/logo-ls) | [`v1.3.7`](https://github.com/Yash-Handa/logo-ls/releases/tag/v1.3.7) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=logo-ls-v1.3.7) | all |
 | [`mockery`](https://github.com/vektra/mockery) | [`v3.8.0`](https://github.com/vektra/mockery/releases/tag/v3.8.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockery) | all |
 | [`mockgen`](https://github.com/uber-go/mock) | [`v0.6.0`](https://github.com/uber-go/mock/releases/tag/v0.6.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockgen) | all |
+| [`rumdl`](https://github.com/rvben/rumdl) | [`v0.2.79`](https://github.com/rvben/rumdl/releases/tag/v0.2.79) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=rumdl) | all |
 | [`stern`](https://github.com/stern/stern) | [`v1.34.0`](https://github.com/stern/stern/releases/tag/v1.34.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern) | all |
 | [`supervisord`](https://github.com/ochinchina/supervisord) | [`v0.7.6`](https://github.com/ochinchina/supervisord/releases/tag/v0.7.6) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=supervisord) | all |
 
@@ -84,6 +85,29 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 A substitute Go program printing `dlv v1.7.0 is unavailable on <platform name>` and exiting with exit code `1` is used for unsupported platforms.
 This is like so so you can still cross build with all the architectures, especially if the program is an optional dependency.
 This is often the case for VSCode development containers for instance. In this case, if you try to build for `arm/v7` and need `dlv` as an optional dependency, your `COPY --from=qmcgaw/binpot:dlv` will not fail.
+
+## Notes on Rust programs
+
+💁 Cross compiling Rust needs a C cross compiler as soon as the program links C code, which happens through crates such as `tikv-jemalloc-sys`.
+The Dockerfiles use [cargo-zigbuild](https://github.com/rust-cross/cargo-zigbuild) with the `zig` Alpine package as C cross compiler and linker, which still gives fully static binaries (musl) on every architecture. See [dockerfiles/rumdl](dockerfiles/rumdl) as a reference.
+
+⚠️ For Podman, Zig compiles musl from source for each target, which needs more than the 1024 file descriptors that `podman build` allocates (soft *and* hard limit, so it cannot be raised from the Dockerfile). Therefore build with `podman build --ulimit nofile=65536:65536 dockerfiles/<program>` or the link step fails with `error: sub-compilation of musl libc.a failed`.
+
+🔧 On the 32 bits Arm targets (`linux/arm/v6` and `linux/arm/v7`), the compiler flags that `rustc` passes to the C compiler are not understood by zig, so the C dependencies are built through [zig-cc-wrapper.sh](dockerfiles/rumdl/zig-cc-wrapper.sh), which rewrites them for zig. It keeps the exact same architecture baseline as `rustc` uses (`-mcpu=generic+v7a` and `-mcpu=generic+v6` in zig syntax).
+
+🧭 Each Dockerfile carries its own copy of that wrapper: the build context of a program is its own directory, so a file cannot be `COPY`d from another program.
+
+### Note on `rumdl`
+
+`rumdl` is the first Rust program of this repository, and links [jemalloc](https://github.com/jemalloc/jemalloc).
+Upstream only publishes `amd64` and `arm64` binaries, so the six other architectures are built here, and all eight tags exist:
+
+- jemalloc bakes the page size at build time, so `JEMALLOC_SYS_WITH_LG_PAGE` is `12` on `amd64`, `386`, `arm/v6` and `arm/v7`, and `16` on `arm64`, `ppc64le` and `riscv64`: it has to be greater than or equal to the page size of the systems running the binary, and `16` covers the 16 KiB page systems of Asahi Linux and Raspberry Pi 5 as well as the 64 KiB page kernels.
+- `linux/s390x` gets the [unavailable](unavailable) substitute program, printing `rumdl vX.Y.Z is unavailable on linux/s390x` and exiting with `1`, because no static binary is possible there:
+    - there is no `s390x` musl Rust target, so the C standard library has to be glibc on this architecture;
+    - zig can link a static glibc for most architectures but explicitly rejects `s390x`, and a dynamically linked glibc binary cannot run on a [scratch](https://hub.docker.com/_/scratch) image.
+
+A real `linux/s390x` build would require the `s390x-unknown-linux-gnu` Rust target with the Debian toolchain `gcc-s390x-linux-gnu` (`CC_s390x_unknown_linux_gnu=s390x-linux-gnu-gcc`), producing a dynamically linked binary, which is out of the scope of this repository.
 
 ## Copy the binary on your host
 

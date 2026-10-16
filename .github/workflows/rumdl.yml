@@ -1,0 +1,21 @@
+name: rumdl
+on:
+  push:
+    paths:
+      - .github/workflows/rumdl.yml
+      - "dockerfiles/rumdl/**"
+      - .github/workflows/reusable.yml
+  pull_request:
+    paths:
+      - .github/workflows/rumdl.yml
+      - "dockerfiles/rumdl/**"
+      - .github/workflows/reusable.yml
+
+jobs:
+  rumdl:
+    uses: ./.github/workflows/reusable.yml
+    secrets: inherit
+    with:
+      name: rumdl
+      version: v0.2.79
+      # Note: substitute program of the repository on linux/s390x
