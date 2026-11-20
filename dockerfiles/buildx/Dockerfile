@@ -1,7 +1,6 @@
 ARG ALPINE_VERSION=3.23
 ARG GO_VERSION=1.27
 ARG XCPU_VERSION=v0.9.0
-ARG BUILDPLATFORM=linux/amd64
 
 FROM --platform=${BUILDPLATFORM} ghcr.io/qdm12/xcputranslate:${XCPU_VERSION} AS xcputranslate
 

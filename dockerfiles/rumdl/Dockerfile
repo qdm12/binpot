@@ -14,7 +14,6 @@ ARG ALPINE_VERSION=3.24
 ARG RUST_VERSION=1.98.0
 ARG ZIGBUILD_VERSION=v0.23.4
 ARG XCPU_VERSION=v0.9.0
-ARG BUILDPLATFORM=linux/amd64
 
 # Only used to build the substitute program of this repository on the platforms
 # rumdl cannot be built statically on.
