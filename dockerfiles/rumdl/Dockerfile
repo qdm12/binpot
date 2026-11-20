@@ -11,7 +11,7 @@
 # Alpine 3.24 rather than 3.23 like the other programs: it carries zig 0.16, with
 # which all the platforms below have been validated (3.23 carries zig 0.15).
 ARG ALPINE_VERSION=3.24
-ARG RUST_VERSION=1.96.0
+ARG RUST_VERSION=1.98.0
 ARG ZIGBUILD_VERSION=v0.23.4
 ARG XCPU_VERSION=v0.9.0
 ARG BUILDPLATFORM=linux/amd64
@@ -41,7 +41,7 @@ COPY zig-cc-wrapper.sh /usr/local/bin/zig-cc-wrapper
 RUN chmod 500 /usr/local/bin/zig-cc-wrapper
 WORKDIR /tmp/build
 
-ARG VERSION=v0.2.79
+ARG VERSION=v0.3.5
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/rvben/rumdl.git .
 
 ARG TARGETPLATFORM

@@ -17,5 +17,5 @@ jobs:
     secrets: inherit
     with:
       name: rumdl
-      version: v0.2.79
+      version: v0.3.5
       # Note: substitute program of the repository on linux/s390x
