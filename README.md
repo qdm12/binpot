@@ -64,7 +64,7 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
 | [`mockery`](https://github.com/vektra/mockery) | [`v3.9.1`](https://github.com/vektra/mockery/releases/tag/v3.9.1) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockery) | all |
 | [`mockgen`](https://github.com/uber-go/mock) | [`v0.6.0`](https://github.com/uber-go/mock/releases/tag/v0.6.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=mockgen) | all |
 | [`rumdl`](https://github.com/rvben/rumdl) | [`v0.3.5`](https://github.com/rvben/rumdl/releases/tag/v0.3.5) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=rumdl) | all |
-| [`stern`](https://github.com/stern/stern) | [`v1.34.0`](https://github.com/stern/stern/releases/tag/v1.34.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern) | all |
+| [`stern`](https://github.com/stern/stern) | [`v1.35.0`](https://github.com/stern/stern/releases/tag/v1.35.0) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=stern) | all |
 | [`supervisord`](https://github.com/ochinchina/supervisord) | [`v0.7.6`](https://github.com/ochinchina/supervisord/releases/tag/v0.7.6) | [**Docker Hub**](https://hub.docker.com/r/qmcgaw/binpot/tags?name=supervisord) | all |
 
 ℹ️ `all` architectures means: linux/amd64, linux/386, linux/arm64, linux/arm/v7, linux/arm/v6, linux/ppc64le, linux/s390x, linux/riscv64
