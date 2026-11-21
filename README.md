@@ -111,6 +111,8 @@ The Dockerfiles use [cargo-zigbuild](https://github.com/rust-cross/cargo-zigbuil
 
 🧭 Each Dockerfile carries its own copy of that wrapper: the build context of a program is its own directory, so a file cannot be `COPY`d from another program.
 
+💾 A Rust program linked with upstream's release profile, `lto = "fat"` and `codegen-units = 1`, ends every architecture in one LLVM pass of around 4 GiB of memory. Buildx starts one build step per platform at once, and a GitHub runner has 4 CPUs and 15.6 GiB of memory: the seven real architectures of `rumdl` built together need around 24 GiB, the runner dies in the link and does not even upload its logs, which GitHub reports as "The hosted runner lost communication with the server". Pass `[worker.oci] max-parallelism = 1` through the `buildkitd_config` input of the reusable workflow, as [rumdl.yml](.github/workflows/rumdl.yml) does, to build one platform at a time. The build is CPU bound, so it takes the same time overall.
+
 ### Note on `rumdl`
 
 `rumdl` is the first Rust program of this repository, and links [jemalloc](https://github.com/jemalloc/jemalloc).

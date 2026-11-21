@@ -19,3 +19,16 @@ jobs:
       name: rumdl
       version: v0.3.5
       # Note: substitute program of the repository on linux/s390x
+      #
+      # Upstream releases link with `lto = "fat"` and `codegen-units = 1`, so each
+      # of the seven real architectures needs around 4 GiB of memory in a single
+      # LLVM pass, and buildx starts one build step per platform at once: seven of
+      # them together need around 24 GiB, more than the 15.6 GiB of a GitHub
+      # runner. The runner dies in the link and takes the logs with it, which is
+      # how run 44845650721 ended, with "The hosted runner lost communication with
+      # the server" and no build output at all. Building one platform at a time
+      # keeps the peak at a single link; the build is CPU bound, so it takes the
+      # same time overall.
+      buildkitd_config: |
+        [worker.oci]
+          max-parallelism = 1

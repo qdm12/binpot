@@ -61,6 +61,7 @@ The tool needs no Docker and builds nothing. It only edits text.
 - `gomock` and `mockgen` share one repository (`uber-go/mock`) and their images together;
   `kubectx` and `kubens` share `ahmetb/kubectx`.
 - `gopls` builds from `golang/tools` using the tag `gopls/vX.Y.Z`, not a bare version.
+- `rumdl` links with upstream's `lto = "fat"` and `codegen-units = 1`, which peaks at around 4 GiB of memory per architecture, and buildx runs one build step per platform at once: the seven real platforms need around 24 GiB together, more than the 15.6 GiB of a GitHub runner, so the runner dies mid-link without uploading any log ("The hosted runner lost communication with the server", run 44845650721). `.github/workflows/rumdl.yml` caps buildkit with `[worker.oci] max-parallelism = 1` through the reusable workflow's `buildkitd_config` input; keep that cap unless the link gets lighter.
 - `dockerfiles/kubectl/Dockerfile` carries pre-existing stale `gitMajor`/`gitMinor` ldflags. They
   are not the pinned version and are not yours to "fix" as part of an upgrade.
 - The repository has no Go code of its own besides `cmd/versions`; `go.mod` is `go 1.27`, stdlib
