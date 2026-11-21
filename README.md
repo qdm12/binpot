@@ -79,6 +79,20 @@ COPY --from=qmcgaw/binpot:helm /bin /usr/local/bin/helm
         - If one architecture is not supported such as for `dlv`, build the [unavailable](unavailable) program
     2. Pushing the images containing the program to Docker Hub **and** ghcr.io
 
+## Upgrading the programs
+
+A version is written in three places per program: the `ARG VERSION` of its Dockerfile, the `version` input of its workflow, and its row in the table above. The [`cmd/versions`](cmd/versions) command checks them against the releases published upstream, and can bump them all at once.
+
+```sh
+export GH_TOKEN=...        # optional, raises the Github rate limit from 60 to 5000 requests an hour
+
+go run ./cmd/versions                       # check every program
+go run ./cmd/versions stern helm            # check two of them
+go run ./cmd/versions -update -commit       # bump every program out of date, one commit each
+```
+
+An upgrade is committed as `` `programname` vX.Y.Z ``, one commit per program, and nothing is ever pushed. The command refuses to touch a program whose three pins disagree, so a half-done upgrade is never made worse, and it skips pre-releases such as `v1.2.0-rc.1`. Adding a program to the repository means adding a line to the registry in [`internal/program/program.go`](internal/program/program.go).
+
 ## Note on `dlv`
 
 💁 Concerning `dlv`: all images are built for all architectures even if the program does not support all of them.
